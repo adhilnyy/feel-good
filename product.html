@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Earth Elixir | Interview Project</title>
+  <link href="assets/favicon.ico" rel="icon"/>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="font-montserrat antialiased text-gray-900 ">
+
+  <!-- HEADER -->
+  <header>
+    <div class="bg-[#016936] font-semibold text-white text-xs py-2 flex justify-center items-center ">
+      Subscribe & Save Now | Shop Now
+    </div>
+    <div class="bg-white ps-5 pe-4">
+      <div class="flex justify-between items-center space-x-6">
+        <button id="menu-btn" class="cursor-pointer sm:hidden">
+          <img src="assets/menu.png" alt="Menu">
+        </button>
+        <!-- Navigation Menu (Pop up) -->
+        <div id="nav-menu" class="fixed z-50 top-0 left-0 w-full h-1/4 bg-white bg-opacity-75  justify-center items-center hidden">
+            
+            <!-- Close Button -->
+            <button id="close-btn" class="absolute top-2 right-3 text-xl font-bold text-gray-700 hover:text-black">
+              ✖
+            </button>
+
+            <!-- Navigation Items -->
+            <nav aria-label="Primary Navigation">
+              <ul class="flex-col p-4 mt-8 space-x-6">
+                <li class="mb-3">
+                  <a href="#shop" class="font-bold transition-transform hover:-translate-y-1 duration-300">
+                    Shop
+                  </a>
+                </li>
+                <li class="mb-3">
+                  <a href="#collections" class="font-bold transition-transform hover:-translate-y-1 duration-300">
+                    Collections
+                  </a>
+                </li>
+              </ul>
+            </nav>
+        </div>
+        <nav class="hidden sm:block" aria-label="Primary Navigation">
+          <ul class="flex space-x-6">
+            <li>
+              <a href="#shop" class="font-bold hover:text-[#036937] ">
+                Shop
+              </a>
+            </li>
+            <li>
+              <a href="#collections" class="font-bold hover:text-[#036937] ">
+                Collections
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <a href="#" aria-label="Home">
+          <img src="assets/logo.webp" alt="Earth Elixir Logo" class="h-20 w-auto" />
+        </a>
+        <div>
+          <a href="#cart" aria-label="View Shopping Cart" class="block">
+            <img src="assets/cart.png" alt="Cart" class="transition-transform duration-300 hover:rotate-[10deg]">
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="hero-product" class="grid grid-cols-2 gap-6 w-full h-full p-4">
+      <div class="col-span-2 lg:col-span-1">
+        <!-- product image -->
+        <div class="flex justify-center items-center py-5 rounded-xl bg-[#EFEFEF]">
+            <img class="object-cover transform opacity-0 translate-y-10 transition-all duration-700 animated-image" src="assets/feature.webp" alt="product">
+        </div>
+        <!-- more images -->
+        <div class="flex flex-wrap gap-2 my-3">
+            <div class="w-20 h-20 rounded-xl transition-transform hover:-translate-y-1 duration-300 cursor-pointer">
+                <img src="assets/product-sample.png" alt="product">
+            </div>
+            <div class="w-20 h-20 rounded-xl transition-transform hover:-translate-y-1 duration-300 focus-within:border-2 focus-within:border-[#F36024] cursor-pointer">
+                <img class="w-full h-full" src="assets/product-sample.png" alt="product">
+            </div>
+        </div>
+        <div class="space-y-4 lg:block hidden">
+            <!-- testimonial -->
+            <article class="p-6 rounded shadow border border-[#FFFF00] bg-[#FCFCE3]">
+              <p class="mb-4 font-medium">“My skin is clearer, my gut issues have improved, I have more energy during the day and sleep better at night. 10/10 would recommend to anyone!”</p>
+             <div class="flex justify-between">
+                <div class="flex items-center gap-2">
+                    <div class="w-10 h-10 rounded-[50%]">
+                        <img src="assets/profile.png" alt="profile" class="w-full h-full">
+                    </div>
+                    <div>
+                        <h4 class="font-black">Kristin C.</h4>
+                        <p class="font-semibold text-xs flex items-center gap-x-1">
+                            <span class="text-xs inline-block">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="currentColor">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.9168 21.6795C16.8275 21.6795 21.6187 16.8883 21.6187 10.9776C21.6187 5.0669 16.8275 0.275635 10.9168 0.275635C5.00611 0.275635 0.214844 5.0669 0.214844 10.9776C0.214844 16.8883 5.00611 21.6795 10.9168 21.6795ZM14.701 7.19337C14.902 6.9927 15.1744 6.88008 15.4584 6.88028C15.7424 6.88048 16.0147 6.99349 16.2153 7.19445C16.416 7.3954 16.5286 7.66784 16.5284 7.95183C16.5282 8.23582 16.4152 8.5081 16.2143 8.70877L10.1644 14.7586L10.1602 14.7629C10.061 14.8626 9.94312 14.9417 9.81326 14.9957C9.68341 15.0497 9.54417 15.0775 9.40354 15.0775C9.26291 15.0775 9.12366 15.0497 8.99381 14.9957C8.86396 14.9417 8.74607 14.8626 8.64691 14.7629L8.64263 14.7586L5.61933 11.7353C5.51711 11.6366 5.43558 11.5185 5.3795 11.3879C5.32341 11.2573 5.29389 11.1169 5.29265 10.9748C5.29142 10.8327 5.31849 10.6918 5.3723 10.5603C5.42611 10.4287 5.50558 10.3092 5.60606 10.2088C5.70655 10.1083 5.82604 10.0288 5.95756 9.975C6.08908 9.92119 6.23001 9.89411 6.3721 9.89535C6.5142 9.89658 6.65464 9.92611 6.7852 9.98219C6.91577 10.0383 7.03386 10.1198 7.13258 10.222L9.40354 12.4919L14.701 7.19445V7.19337Z"/>
+                                </svg>
+                            </span>
+                            VERIFIED CUSTOMER
+                        </p>
+                    </div>
+                  </div>
+                  <div class="flex items-center">
+                    <span class="text-black text-sm">
+                      <!-- 5 star rating -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 inline-block" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927C9.323 2.039 10.677 2.039 10.951 2.927l1.286 3.971a1 1 0 00.95.69h4.175c.969 0 1.371 1.24.588 1.81l-3.376 2.451a1 1 0 00-.364 1.118l1.286 3.97c.274.888-.755 1.62-1.54 1.118l-3.376-2.451a1 1 0 00-1.175 0l-3.376 2.451c-.784.502-1.814-.23-1.54-1.118l1.286-3.97a1 1 0 00-.364-1.118L2.05 9.398c-.783-.57-.38-1.81.588-1.81h4.175a1 1 0 00.95-.69L9.049 2.927z"/>
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 inline-block" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927C9.323 2.039 10.677 2.039 10.951 2.927l1.286 3.971a1 1 0 00.95.69h4.175c.969 0 1.371 1.24.588 1.81l-3.376 2.451a1 1 0 00-.364 1.118l1.286 3.97c.274.888-.755 1.62-1.54 1.118l-3.376-2.451a1 1 0 00-1.175 0l-3.376 2.451c-.784.502-1.814-.23-1.54-1.118l1.286-3.97a1 1 0 00-.364-1.118L2.05 9.398c-.783-.57-.38-1.81.588-1.81h4.175a1 1 0 00.95-.69L9.049 2.927z"/>
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 inline-block" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927C9.323 2.039 10.677 2.039 10.951 2.927l1.286 3.971a1 1 0 00.95.69h4.175c.969 0 1.371 1.24.588 1.81l-3.376 2.451a1 1 0 00-.364 1.118l1.286 3.97c.274.888-.755 1.62-1.54 1.118l-3.376-2.451a1 1 0 00-1.175 0l-3.376 2.451c-.784.502-1.814-.23-1.54-1.118l1.286-3.97a1 1 0 00-.364-1.118L2.05 9.398c-.783-.57-.38-1.81.588-1.81h4.175a1 1 0 00.95-.69L9.049 2.927z"/>
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 inline-block" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927C9.323 2.039 10.677 2.039 10.951 2.927l1.286 3.971a1 1 0 00.95.69h4.175c.969 0 1.371 1.24.588 1.81l-3.376 2.451a1 1 0 00-.364 1.118l1.286 3.97c.274.888-.755 1.62-1.54 1.118l-3.376-2.451a1 1 0 00-1.175 0l-3.376 2.451c-.784.502-1.814-.23-1.54-1.118l1.286-3.97a1 1 0 00-.364-1.118L2.05 9.398c-.783-.57-.38-1.81.588-1.81h4.175a1 1 0 00.95-.69L9.049 2.927z"/>
+                      </svg>
+                    </span>
+                  </div>
+             </div>
+            </article>
+
+            <!-- moneyback policy -->
+            <div class="p-6 rounded shadow border border-[#85CF7F] bg-[#F0F8F0] flex justify-between items-center gap-3">
+                <div>
+                    <img src="assets/money-back.png" alt="profile" class="w-full h-full">
+                </div>
+                <div>
+                    <h6 class="font-black text-xl">30 Day Money Back Guarantee</h6>
+                    <p>
+                        My skin is clearer, my gut issues have improved, I have more energy during the day and sleep better at night. 10/10 would recommend to
+                    </p>
+                </div>
+              </div>
+
+        </div>
+      </div>
+      <div class="col-span-2 lg:col-span-1 text-start sm:px-4">
+
+        <div class="flex gap-x-1 mt-2 justify-start text-start">
+            <div class="flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M15.8925 6.55618C15.9697 6.17624 15.6606 5.7203 15.2743 5.7203L10.8696 5.11239L8.86045 1.16094C8.78318 1.00897 8.7059 0.932977 8.55135 0.856988C8.16498 0.62902 7.70133 0.780999 7.46951 1.16094L5.53764 5.11239L1.13297 5.7203C0.901149 5.7203 0.746599 5.79629 0.669324 5.94827C0.360225 6.25223 0.360225 6.70816 0.669324 7.01212L3.83759 10.0517L3.06484 14.3831C3.06484 14.5351 3.06484 14.687 3.14212 14.839C3.37394 15.219 3.83759 15.3709 4.22397 15.143L8.16498 13.0913L12.106 15.143C12.1833 15.219 12.3378 15.219 12.4924 15.219C12.5696 15.219 12.5696 15.219 12.6469 15.219C13.0333 15.143 13.3424 14.763 13.2651 14.3071L12.4924 9.9757L15.6606 6.93613C15.8152 6.86014 15.8925 6.70816 15.8925 6.55618Z" fill="#F4C315"/>
+                </svg>
+            </div>
+            <div class="flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M15.8925 6.55618C15.9697 6.17624 15.6606 5.7203 15.2743 5.7203L10.8696 5.11239L8.86045 1.16094C8.78318 1.00897 8.7059 0.932977 8.55135 0.856988C8.16498 0.62902 7.70133 0.780999 7.46951 1.16094L5.53764 5.11239L1.13297 5.7203C0.901149 5.7203 0.746599 5.79629 0.669324 5.94827C0.360225 6.25223 0.360225 6.70816 0.669324 7.01212L3.83759 10.0517L3.06484 14.3831C3.06484 14.5351 3.06484 14.687 3.14212 14.839C3.37394 15.219 3.83759 15.3709 4.22397 15.143L8.16498 13.0913L12.106 15.143C12.1833 15.219 12.3378 15.219 12.4924 15.219C12.5696 15.219 12.5696 15.219 12.6469 15.219C13.0333 15.143 13.3424 14.763 13.2651 14.3071L12.4924 9.9757L15.6606 6.93613C15.8152 6.86014 15.8925 6.70816 15.8925 6.55618Z" fill="#F4C315"/>
+                </svg>
+            </div>
+            <div class="flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M15.8925 6.55618C15.9697 6.17624 15.6606 5.7203 15.2743 5.7203L10.8696 5.11239L8.86045 1.16094C8.78318 1.00897 8.7059 0.932977 8.55135 0.856988C8.16498 0.62902 7.70133 0.780999 7.46951 1.16094L5.53764 5.11239L1.13297 5.7203C0.901149 5.7203 0.746599 5.79629 0.669324 5.94827C0.360225 6.25223 0.360225 6.70816 0.669324 7.01212L3.83759 10.0517L3.06484 14.3831C3.06484 14.5351 3.06484 14.687 3.14212 14.839C3.37394 15.219 3.83759 15.3709 4.22397 15.143L8.16498 13.0913L12.106 15.143C12.1833 15.219 12.3378 15.219 12.4924 15.219C12.5696 15.219 12.5696 15.219 12.6469 15.219C13.0333 15.143 13.3424 14.763 13.2651 14.3071L12.4924 9.9757L15.6606 6.93613C15.8152 6.86014 15.8925 6.70816 15.8925 6.55618Z" fill="#F4C315"/>
+                </svg>
+            </div>
+            <div class="flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M15.8925 6.55618C15.9697 6.17624 15.6606 5.7203 15.2743 5.7203L10.8696 5.11239L8.86045 1.16094C8.78318 1.00897 8.7059 0.932977 8.55135 0.856988C8.16498 0.62902 7.70133 0.780999 7.46951 1.16094L5.53764 5.11239L1.13297 5.7203C0.901149 5.7203 0.746599 5.79629 0.669324 5.94827C0.360225 6.25223 0.360225 6.70816 0.669324 7.01212L3.83759 10.0517L3.06484 14.3831C3.06484 14.5351 3.06484 14.687 3.14212 14.839C3.37394 15.219 3.83759 15.3709 4.22397 15.143L8.16498 13.0913L12.106 15.143C12.1833 15.219 12.3378 15.219 12.4924 15.219C12.5696 15.219 12.5696 15.219 12.6469 15.219C13.0333 15.143 13.3424 14.763 13.2651 14.3071L12.4924 9.9757L15.6606 6.93613C15.8152 6.86014 15.8925 6.70816 15.8925 6.55618Z" fill="#F4C315"/>
+                </svg>
+            </div>
+            <div class="flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M15.8925 6.55618C15.9697 6.17624 15.6606 5.7203 15.2743 5.7203L10.8696 5.11239L8.86045 1.16094C8.78318 1.00897 8.7059 0.932977 8.55135 0.856988C8.16498 0.62902 7.70133 0.780999 7.46951 1.16094L5.53764 5.11239L1.13297 5.7203C0.901149 5.7203 0.746599 5.79629 0.669324 5.94827C0.360225 6.25223 0.360225 6.70816 0.669324 7.01212L3.83759 10.0517L3.06484 14.3831C3.06484 14.5351 3.06484 14.687 3.14212 14.839C3.37394 15.219 3.83759 15.3709 4.22397 15.143L8.16498 13.0913L12.106 15.143C12.1833 15.219 12.3378 15.219 12.4924 15.219C12.5696 15.219 12.5696 15.219 12.6469 15.219C13.0333 15.143 13.3424 14.763 13.2651 14.3071L12.4924 9.9757L15.6606 6.93613C15.8152 6.86014 15.8925 6.70816 15.8925 6.55618Z" fill="#F4C315"/>
+                </svg>
+            </div>
+            <div>Rated <span class="text-[#F4C315] font-semibold">4.2/5</span> on  <span class="font-semibold">+2,4823</span> reviews</div>
+        </div>
+        <h1 class="text-4xl sm:text-5xl">Feels Good Gummies</h1>
+        <div>
+            <p class="text-2xl sm:text-3xl font-bold mb-4 inline-block me-2">$25</p>
+            <span class="text-2xl sm:text-3xl font-light line-through decoration-1 opacity-50">$33</span>
+        </div>
+        <ul class="mb-12 sm:mb-6 md:w-full">
+            <li>
+              <div class="flex items-center gap-x-1 text-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.9168 21.6795C16.8275 21.6795 21.6187 16.8883 21.6187 10.9776C21.6187 5.0669 16.8275 0.275635 10.9168 0.275635C5.00611 0.275635 0.214844 5.0669 0.214844 10.9776C0.214844 16.8883 5.00611 21.6795 10.9168 21.6795ZM14.701 7.19337C14.902 6.9927 15.1744 6.88008 15.4584 6.88028C15.7424 6.88048 16.0147 6.99349 16.2153 7.19445C16.416 7.3954 16.5286 7.66784 16.5284 7.95183C16.5282 8.23582 16.4152 8.5081 16.2143 8.70877L10.1644 14.7586L10.1602 14.7629C10.061 14.8626 9.94312 14.9417 9.81326 14.9957C9.68341 15.0497 9.54417 15.0775 9.40354 15.0775C9.26291 15.0775 9.12366 15.0497 8.99381 14.9957C8.86396 14.9417 8.74607 14.8626 8.64691 14.7629L8.64263 14.7586L5.61933 11.7353C5.51711 11.6366 5.43558 11.5185 5.3795 11.3879C5.32341 11.2573 5.29389 11.1169 5.29265 10.9748C5.29142 10.8327 5.31849 10.6918 5.3723 10.5603C5.42611 10.4287 5.50558 10.3092 5.60606 10.2088C5.70655 10.1083 5.82604 10.0288 5.95756 9.975C6.08908 9.92119 6.23001 9.89411 6.3721 9.89535C6.5142 9.89658 6.65464 9.92611 6.7852 9.98219C6.91577 10.0383 7.03386 10.1198 7.13258 10.222L9.40354 12.4919L14.701 7.19445V7.19337Z" fill="#00A2F7"/>
+                </svg>
+                <span class="font-bold font-satoshi">Strengthens Immune System & Fights Viruses</span>
+              </div>
+            </li>
+            <li class="mt-2">
+              <div class="flex items-center gap-x-1 text-lg font-satoshi">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.9168 21.6795C16.8275 21.6795 21.6187 16.8883 21.6187 10.9776C21.6187 5.0669 16.8275 0.275635 10.9168 0.275635C5.00611 0.275635 0.214844 5.0669 0.214844 10.9776C0.214844 16.8883 5.00611 21.6795 10.9168 21.6795ZM14.701 7.19337C14.902 6.9927 15.1744 6.88008 15.4584 6.88028C15.7424 6.88048 16.0147 6.99349 16.2153 7.19445C16.416 7.3954 16.5286 7.66784 16.5284 7.95183C16.5282 8.23582 16.4152 8.5081 16.2143 8.70877L10.1644 14.7586L10.1602 14.7629C10.061 14.8626 9.94312 14.9417 9.81326 14.9957C9.68341 15.0497 9.54417 15.0775 9.40354 15.0775C9.26291 15.0775 9.12366 15.0497 8.99381 14.9957C8.86396 14.9417 8.74607 14.8626 8.64691 14.7629L8.64263 14.7586L5.61933 11.7353C5.51711 11.6366 5.43558 11.5185 5.3795 11.3879C5.32341 11.2573 5.29389 11.1169 5.29265 10.9748C5.29142 10.8327 5.31849 10.6918 5.3723 10.5603C5.42611 10.4287 5.50558 10.3092 5.60606 10.2088C5.70655 10.1083 5.82604 10.0288 5.95756 9.975C6.08908 9.92119 6.23001 9.89411 6.3721 9.89535C6.5142 9.89658 6.65464 9.92611 6.7852 9.98219C6.91577 10.0383 7.03386 10.1198 7.13258 10.222L9.40354 12.4919L14.701 7.19445V7.19337Z" fill="#00A2F7"/>
+                </svg>
+                <span class="font-bold">Natural Energy Without Jitters Or Crashes</span>
+              </div>
+            </li>
+            <li class="mt-2">
+              <div class="flex items-center gap-x-1 text-lg font-satoshi">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.9168 21.6795C16.8275 21.6795 21.6187 16.8883 21.6187 10.9776C21.6187 5.0669 16.8275 0.275635 10.9168 0.275635C5.00611 0.275635 0.214844 5.0669 0.214844 10.9776C0.214844 16.8883 5.00611 21.6795 10.9168 21.6795ZM14.701 7.19337C14.902 6.9927 15.1744 6.88008 15.4584 6.88028C15.7424 6.88048 16.0147 6.99349 16.2153 7.19445C16.416 7.3954 16.5286 7.66784 16.5284 7.95183C16.5282 8.23582 16.4152 8.5081 16.2143 8.70877L10.1644 14.7586L10.1602 14.7629C10.061 14.8626 9.94312 14.9417 9.81326 14.9957C9.68341 15.0497 9.54417 15.0775 9.40354 15.0775C9.26291 15.0775 9.12366 15.0497 8.99381 14.9957C8.86396 14.9417 8.74607 14.8626 8.64691 14.7629L8.64263 14.7586L5.61933 11.7353C5.51711 11.6366 5.43558 11.5185 5.3795 11.3879C5.32341 11.2573 5.29389 11.1169 5.29265 10.9748C5.29142 10.8327 5.31849 10.6918 5.3723 10.5603C5.42611 10.4287 5.50558 10.3092 5.60606 10.2088C5.70655 10.1083 5.82604 10.0288 5.95756 9.975C6.08908 9.92119 6.23001 9.89411 6.3721 9.89535C6.5142 9.89658 6.65464 9.92611 6.7852 9.98219C6.91577 10.0383 7.03386 10.1198 7.13258 10.222L9.40354 12.4919L14.701 7.19445V7.19337Z" fill="#00A2F7"/>
+                </svg>
+                <span class="font-bold">Sharper Focus & Sustained Energy</span>
+              </div>
+            </li>
+          </ul>
+
+          <!-- offers -->
+           <div class="flex gap-3">
+            <div class="focus-within:border-2 focus-within:border-[#F36024] shadow-md transition-all duration-300 hover:shadow-lg p-4 rounded-xl flex flex-col justify-center items-center text-center">
+                <h6 class="font-bold text-xl sm:text-[22px] mb-3">One Tub</h6>
+            
+                <div class="flex justify-center items-center py-2 w-24 h-24">
+                    <img class="object-cover transform opacity-0 translate-y-10 transition-all duration-700 animated-image" src="assets/feature.webp" alt="product">
+                </div>
+            
+                <button class="mt-6 cursor-pointer inline-block bg-[#FF00DE] shadow-outline transition-transform duration-300 hover:-translate-y-1 text-white px-5 py-3 rounded-full shadow hover:bg-opacity-25">
+                    Save 10%
+                </button>
+            
+                <div class="mt-6">
+                    <span class="text-2xl sm:text-[22px] font-light line-through decoration-1 opacity-50 me-2">$33</span>
+                    <p class="text-2xl sm:text-[22px] font-bold mb-4 inline-block">$28 / per</p>
+                </div>
+            </div>
+            <div class="shadow-md transition-all duration-300 hover:shadow-lg p-4 rounded-xl flex flex-col justify-center items-center text-center">
+                <h6 class="font-bold text-xl sm:text-[22px] mb-3">One Tub</h6>
+            
+                <div class="flex justify-center items-center py-2 w-24 h-24">
+                    <img class="object-cover transform opacity-0 translate-y-10 transition-all duration-700 animated-image" src="assets/feature.webp" alt="product">
+                </div>
+            
+                <button class="mt-6 cursor-pointer inline-block bg-[#FDBDF5] shadow-outline transition-transform duration-300 hover:-translate-y-1 text-[#FF00DE] px-5 py-3 rounded-full shadow hover:bg-opacity-25">
+                    Save 10%
+                </button>
+            
+                <div class="mt-6">
+                    <span class="text-2xl sm:text-[22px] font-light line-through decoration-1 opacity-50 me-2">$33</span>
+                    <p class="text-2xl sm:text-[22px] font-bold mb-4 inline-block">$28 / per</p>
+                </div>
+            </div>
+            <div class="shadow-md transition-all duration-300 hover:shadow-lg p-4 rounded-xl flex flex-col justify-center items-center text-center">
+                <h6 class="font-bold text-xl sm:text-[22px] mb-3">One Tub</h6>
+            
+                <div class="flex justify-center items-center py-2 w-24 h-24">
+                    <img class="object-cover transform opacity-0 translate-y-10 transition-all duration-700 animated-image" src="assets/feature.webp" alt="product">
+                </div>
+            
+                <button class="mt-6 cursor-pointer inline-block bg-[#DED0F7] shadow-outline transition-transform duration-300 hover:-translate-y-1 text-[#854DE9] px-5 py-3 rounded-full shadow hover:bg-opacity-25">
+                    Save 10%
+                </button>
+            
+                <div class="mt-6">
+                    <span class="text-2xl sm:text-[22px] font-light line-through decoration-1 opacity-50 me-2">$33</span>
+                    <p class="text-[#854DE9] text-2xl sm:text-[22px] font-bold mb-4 inline-block">$28 / per</p>
+                </div>
+            </div>
+            
+           </div>
+           <!-- subscribe & save -->
+           <div class="bg-[#824BE4] text-white p-6 rounded-lg lg:max-w-md w-full shadow-lg mt-6">
+            <div class="flex items-center justify-between">
+              <label class="flex items-center cursor-pointer">
+                <input type="radio" name="subscription" class="form-radio w-6 h-6  text-white focus:ring-white focus:ring-offset-[#824BE4]" checked>
+                <span class="ml-2 text-lg font-semibold">Subscribe & Save</span>
+              </label>
+              <div class="text-right">
+                <span class="line-through text-gray-400 text-sm">$80</span>
+                <span class="text-2xl font-bold ml-2">$49</span>
+              </div>
+            </div>
+            <div class="mt-4">
+              <select class="bg-[#6F40C2] text-white py-3 rounded-lg w-full cursor-pointer focus:outline-none focus:ring-2 focus:ring-white ">
+                <option class="px-2">Delivered Every Month</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- one time purchase -->
+          <div class="flex items-center justify-between p-4 lg:max-w-md w-full">
+            <label class="flex items-center cursor-pointer">
+              <input type="radio" name="subscription" class="form-radio w-6 h-6  text-white focus:ring-white focus:ring-offset-[#824BE4]" checked>
+              <span class="ml-2 text-lg font-semibold">Subscribe & Save</span>
+            </label>
+            <div class="text-right">
+              <span class="line-through text-gray-400 text-sm">$80</span>
+              <span class="text-2xl font-bold ml-2">$49</span>
+            </div>
+          </div>
+          <!-- Add to cart & shipping details-->
+          <div class="lg:max-w-md w-full px-2 text-center">
+          <a href="#shop" class="mt-6 inline-block bg-[#00A2F7] font-satoshi shadow-outline transition-transform duration-300 hover:-translate-y-1 text-white px-32 py-3 w-full rounded-full shadow hover:bg-white hover:text-[#00A2F7] ">
+            Add to Cart
+          </a>
+          <div class="grid grid-cols-3 gap-2 my-6">
+            <div class="col-span-3 bg-[#F5EEDC] rounded-lg">
+                <div class="font-semibold text-xs py-2 flex justify-center items-center ">
+                   <img class="me-2" src="assets/delivery-truck.png" alt="delivery truck"> Ships from UK - Delivery in 2-5 Days
+                </div>
+            </div>
+            <div class="col-span-1 flex-col justify-center items-center bg-[#F5EEDC] rounded-lg p-4">
+                <div class="w-10 mx-auto">
+                    <img src="assets/Usa.png" alt="USA Flag">
+                </div>
+                <div class="mt-2">
+                    <span class="text-xs font-bold">100% USA Grown</span>
+                </div>
+            </div>
+            <div class="col-span-1 flex-col justify-center items-center bg-[#F5EEDC] rounded-lg p-4">
+                <div class="w-10 mx-auto">
+                    <img src="assets/family.png" alt="Family care">
+                </div>
+                <div class="mt-2">
+                    <span class="text-xs font-bold">1Family Owned</span>
+                </div>
+            </div>
+            <div class="col-span-1 flex-col justify-center items-center bg-[#F5EEDC] rounded-lg p-4">
+                <div class="w-10 mx-auto">
+                    <img src="assets/quality.png" alt="Quality">
+                </div>
+                <div class="mt-2">
+                    <span class="text-xs font-bold">Highest Quality</span>
+                </div>
+            </div>
+          </div>
+          </div>
+
+          <!-- FAQ -->
+          <div id="faqProduct" class="space-y-2 mb-6 lg:mb-0 w-full lg:max-w-md">
+            <!-- FAQ Item 1 -->
+            <div class=" bg-white border-b-2 border-[#C6C6C6]">
+              <button type="button" class="w-full text-left px-4 py-4 cursor-pointer" aria-expanded="false" aria-controls="faqProduct1">
+                <span class="font-black">Dosage</span>
+                <span class="float-right">+</span>
+              </button>
+              <div id="faqProduct1" class="px-4 py-2 hidden" role="region" aria-labelledby="faqProduct1">
+                <p class="font-medium">My skin is clearer, my gut issues have improved, I have more energy during the day and sleep better at night. 
+                    10/10 would recommend to anyone!
+                </p>
+              </div>
+            </div>
+            <!-- FAQ Item 2 -->
+            <div class=" bg-white border-b-2 border-[#C6C6C6]">
+              <button type="button" class="w-full text-left px-4 py-4 cursor-pointer" aria-expanded="false" aria-controls="faqProduct2">
+                <span class="font-black">Certificate of Analysis</span>
+                <span class="float-right">+</span>
+              </button>
+              <div id="faqProduct2" class="px-4 py-2 hidden" role="region" aria-labelledby="faqProduct2">
+                <p class="font-medium">My skin is clearer, my gut issues have improved, I have more energy during the day and sleep better at night. 
+                    10/10 would recommend to anyone!
+                </p>
+              </div>
+            </div>
+            <!-- FAQ Item 3 -->
+            <div class=" bg-white border-b-2 border-[#C6C6C6]">
+              <button type="button" class="w-full text-left px-4 py-4 cursor-pointer" aria-expanded="false" aria-controls="faqProduct3">
+                <span class="font-black">Discreet Delivery</span>
+                <span class="float-right">+</span>
+              </button>
+              <div id="faqProduct3" class="px-4 py-2 hidden" role="region" aria-labelledby="faqProduct3">
+                <p class="font-medium">My skin is clearer, my gut issues have improved, I have more energy during the day and sleep better at night. 
+                    10/10 would recommend to anyone!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- mobile screen -->
+          <div class="space-y-4 lg:hidden">
+            <!-- testimonial -->
+            <article class="p-6 rounded shadow border border-[#FFFF00] bg-[#FCFCE3]">
+              <p class="mb-4 font-medium">“My skin is clearer, my gut issues have improved, I have more energy during the day and sleep better at night. 10/10 would recommend to anyone!”</p>
+             <div class="flex justify-between">
+                <div class="flex items-center gap-2">
+                    <div class="w-10 h-10 rounded-[50%]">
+                        <img src="assets/profile.png" alt="profile" class="w-full h-full">
+                    </div>
+                    <div>
+                        <h4 class="font-black">Kristin C.</h4>
+                        <p class="font-semibold text-xs flex items-center gap-x-1">
+                            <span class="text-xs inline-block">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="currentColor">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.9168 21.6795C16.8275 21.6795 21.6187 16.8883 21.6187 10.9776C21.6187 5.0669 16.8275 0.275635 10.9168 0.275635C5.00611 0.275635 0.214844 5.0669 0.214844 10.9776C0.214844 16.8883 5.00611 21.6795 10.9168 21.6795ZM14.701 7.19337C14.902 6.9927 15.1744 6.88008 15.4584 6.88028C15.7424 6.88048 16.0147 6.99349 16.2153 7.19445C16.416 7.3954 16.5286 7.66784 16.5284 7.95183C16.5282 8.23582 16.4152 8.5081 16.2143 8.70877L10.1644 14.7586L10.1602 14.7629C10.061 14.8626 9.94312 14.9417 9.81326 14.9957C9.68341 15.0497 9.54417 15.0775 9.40354 15.0775C9.26291 15.0775 9.12366 15.0497 8.99381 14.9957C8.86396 14.9417 8.74607 14.8626 8.64691 14.7629L8.64263 14.7586L5.61933 11.7353C5.51711 11.6366 5.43558 11.5185 5.3795 11.3879C5.32341 11.2573 5.29389 11.1169 5.29265 10.9748C5.29142 10.8327 5.31849 10.6918 5.3723 10.5603C5.42611 10.4287 5.50558 10.3092 5.60606 10.2088C5.70655 10.1083 5.82604 10.0288 5.95756 9.975C6.08908 9.92119 6.23001 9.89411 6.3721 9.89535C6.5142 9.89658 6.65464 9.92611 6.7852 9.98219C6.91577 10.0383 7.03386 10.1198 7.13258 10.222L9.40354 12.4919L14.701 7.19445V7.19337Z"/>
+                                </svg>
+                            </span>
+                            VERIFIED CUSTOMER
+                        </p>
+                    </div>
+                  </div>
+                  <div class="flex items-center">
+                    <span class="text-black text-sm">
+                      <!-- 5 star rating -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 inline-block" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927C9.323 2.039 10.677 2.039 10.951 2.927l1.286 3.971a1 1 0 00.95.69h4.175c.969 0 1.371 1.24.588 1.81l-3.376 2.451a1 1 0 00-.364 1.118l1.286 3.97c.274.888-.755 1.62-1.54 1.118l-3.376-2.451a1 1 0 00-1.175 0l-3.376 2.451c-.784.502-1.814-.23-1.54-1.118l1.286-3.97a1 1 0 00-.364-1.118L2.05 9.398c-.783-.57-.38-1.81.588-1.81h4.175a1 1 0 00.95-.69L9.049 2.927z"/>
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 inline-block" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927C9.323 2.039 10.677 2.039 10.951 2.927l1.286 3.971a1 1 0 00.95.69h4.175c.969 0 1.371 1.24.588 1.81l-3.376 2.451a1 1 0 00-.364 1.118l1.286 3.97c.274.888-.755 1.62-1.54 1.118l-3.376-2.451a1 1 0 00-1.175 0l-3.376 2.451c-.784.502-1.814-.23-1.54-1.118l1.286-3.97a1 1 0 00-.364-1.118L2.05 9.398c-.783-.57-.38-1.81.588-1.81h4.175a1 1 0 00.95-.69L9.049 2.927z"/>
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 inline-block" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927C9.323 2.039 10.677 2.039 10.951 2.927l1.286 3.971a1 1 0 00.95.69h4.175c.969 0 1.371 1.24.588 1.81l-3.376 2.451a1 1 0 00-.364 1.118l1.286 3.97c.274.888-.755 1.62-1.54 1.118l-3.376-2.451a1 1 0 00-1.175 0l-3.376 2.451c-.784.502-1.814-.23-1.54-1.118l1.286-3.97a1 1 0 00-.364-1.118L2.05 9.398c-.783-.57-.38-1.81.588-1.81h4.175a1 1 0 00.95-.69L9.049 2.927z"/>
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 inline-block" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927C9.323 2.039 10.677 2.039 10.951 2.927l1.286 3.971a1 1 0 00.95.69h4.175c.969 0 1.371 1.24.588 1.81l-3.376 2.451a1 1 0 00-.364 1.118l1.286 3.97c.274.888-.755 1.62-1.54 1.118l-3.376-2.451a1 1 0 00-1.175 0l-3.376 2.451c-.784.502-1.814-.23-1.54-1.118l1.286-3.97a1 1 0 00-.364-1.118L2.05 9.398c-.783-.57-.38-1.81.588-1.81h4.175a1 1 0 00.95-.69L9.049 2.927z"/>
+                      </svg>
+                    </span>
+                  </div>
+             </div>
+            </article>
+
+            <!-- moneyback policy -->
+            <div class="p-6 rounded shadow border border-[#85CF7F] bg-[#F0F8F0] flex justify-between items-center gap-3">
+                <div>
+                    <img src="assets/money-back.png" alt="profile" class="w-full h-full">
+                </div>
+                <div>
+                    <h6 class="font-black text-xl">30 Day Money Back Guarantee</h6>
+                    <p>
+                        My skin is clearer, my gut issues have improved, I have more energy during the day and sleep better at night. 10/10 would recommend to
+                    </p>
+                </div>
+              </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- BANNER SECTION -->
+    <div class="bg-[#FF00DE] py-2 px-12 flex gap-x-8 overflow-x-auto overflow-y-hidden scrollbar-hide whitespace-nowrap">
+        <div class="flex gap-x-1 text-3xl font-black text-white">
+          <div>
+            <img src="assets/natural.png" alt="All Natural">
+          </div>
+          All Natural
+        </div>
+        <div class="flex gap-x-1 text-3xl font-black text-white">
+          <div>
+            <img src="assets/additive.png" alt="Additive Free">
+          </div>
+          Additive Free
+        </div>
+        <div class="flex gap-x-1 text-3xl font-black text-white">
+          <div>
+            <img src="assets/made-in.png" alt="Made in USA">
+          </div>
+          Made in USA
+        </div>
+        <div class="flex gap-x-1 text-3xl font-black text-white">
+          <div>
+            <img src="assets/pure.png" alt="Pure & Potent">
+          </div>
+          Pure & Potent
+        </div>
+        <div class="flex gap-x-1 text-3xl font-black text-white">
+          <div>
+            <img src="assets/vegan.png" alt="Vegan">
+          </div>
+          Vegan
+        </div>
+    </div>
+
+
+    <!-- FEATURES SECTION -->
+    <section id="features" class="grid grid-cols-3 w-full bg-[linear-gradient(to_bottom,#FF00DE26_15%,#FFF)] h-[650px] sm:h-[850px] lg:h-[750px] pt-20 pb-10 sm:py-32">
+      <div class="col-span-1 relative sm:block hidden">
+        <!-- feature card -->
+        <div class="bg-[#D1D1F3] rounded-sm border border-[#00A2F7] shadow-lg p-6 md:p-8 max-w-[297px] md:mx-auto absolute top-0 left-[10%]">
+          <h4 class="inline-flex items-center space-x-2">
+            <img src="assets/effective.png" alt="Effective & Potent" class="">
+            <span class="font-black text-[#00A2F7] text-xl">Effective & Potent</span>
+          </h4>          
+          <p class="text-sm sm:text-base md:text-lg">
+            Sharpen your mind and enhance concentration, helping you perform your best in all tasks.
+          </p>
+        </div>
+        <div class="bg-[#D1D1F3] rounded-sm border border-[#00A2F7] shadow-lg p-6 md:p-8 max-w-[297px] md:mx-auto absolute bottom-0 right-[2%]">
+          <h4 class="inline-flex items-center space-x-2">
+            <img src="assets/focus.png" alt="Better Focus/Clarity" class="">
+            <span class="font-black text-[#00A2F7] text-xl">Better Focus/Clarity</span>
+          </h4>
+          <p class="text-sm sm:text-base md:text-lg">
+            Sharpen your mind and enhance concentration, helping you perform your best in all tasks.
+          </p>
+        </div>
+      </div>
+        <div class="col-span-3 sm:col-span-1  md:grid  md:place-items-center">
+          <div class="flex justify-center">
+            <img src="assets/feature.webp" alt="Feature" class="w-1/2 md:w-3/4 h-auto transform opacity-0 translate-y-10 transition-all duration-700 animated-image">
+          </div>
+            <!-- mobile features -->
+            <div class="flex sm:hidden my-8 px-4 py-2 gap-x-4 overflow-x-auto overflow-y-hidden scrollbar-hide whitespace-nowrap">
+              <div class="bg-[#D1D1F3] rounded-sm border border-[#00A2F7] shadow-lg p-10 max-w-[350px] md:mx-auto">
+                <h4 class="inline-flex items-center space-x-2">
+                  <img src="assets/effective.png" alt="Effective & Potent" class="">
+                  <span class="font-black text-[#00A2F7] text-lg">Effective & Potent</span>
+                </h4>          
+                <p class="text-sm sm:text-base md:text-lg break-words whitespace-normal">
+                  Sharpen your mind and enhance concentration, helping you perform your best in all tasks.
+                </p>
+              </div>
+              <div class="bg-[#D1D1F3] rounded-sm border border-[#00A2F7] shadow-lg p-10 max-w-[350px] md:mx-auto ">
+                <h4 class="inline-flex items-center space-x-2">
+                  <img src="assets/focus.png" alt="Better Focus/Clarity" class="">
+                  <span class="font-black text-[#00A2F7] text-lg">Better Focus/Clarity</span>
+                </h4>
+                <p class="text-sm sm:text-base md:text-lg break-words whitespace-normal">
+                  Sharpen your mind and enhance concentration, helping you perform your best in all tasks.
+                </p>
+              </div>
+              <div class="bg-[#D1D1F3] rounded-sm border border-[#00A2F7] shadow-lg p-10 max-w-[350px] md:mx-auto">
+                <h4 class="inline-flex items-center space-x-2">
+                  <img src="assets/immune.png" alt="Fortified Immune Sys." class="">
+                  <span class="font-black text-[#00A2F7] text-lg">Fortified Immune Sys.</span>
+                </h4>
+                <p class="text-sm sm:text-base md:text-lg break-words whitespace-normal">
+                  Sharpen your mind and enhance concentration, helping you perform your best in all tasks.
+                </p>
+              </div>
+              <div class="bg-[#D1D1F3] rounded-sm border border-[#00A2F7] shadow-lg p-10 max-w-[350px] md:mx-auto">
+                <h4 class="inline-flex items-center space-x-2">
+                  <img src="assets/immune.png" alt="Fortified Immune Sys." class="">
+                  <span class="font-black text-[#00A2F7] text-lg">Fortified Immune Sys.</span>
+                </h4>
+                <p class="text-sm sm:text-base md:text-lg break-words whitespace-normal">
+                  Sharpen your mind and enhance concentration, helping you perform your best in all tasks.
+                </p>
+              </div>
+             </div>
+            </div>
+      <div class="hidden sm:block col-span-1 relative">
+        <!-- feature card -->
+        <div class="bg-[#D1D1F3] rounded-sm border border-[#00A2F7] shadow-lg p-6 md:p-8 max-w-[297px] md:mx-auto absolute top-0 right-[10%]">
+          <h4 class="inline-flex items-center space-x-2">
+            <img src="assets/immune.png" alt="Fortified Immune Sys." class="">
+            <span class="font-black text-[#00A2F7] text-xl">Fortified Immune Sys.</span>
+          </h4>
+          <p class="text-sm sm:text-base md:text-lg">
+            Sharpen your mind and enhance concentration, helping you perform your best in all tasks.
+          </p>
+        </div>
+        <div class="bg-[#D1D1F3] rounded-sm border border-[#00A2F7] shadow-lg p-6 md:p-8 max-w-[297px] md:mx-auto absolute bottom-0 left-[2%]">
+          <h4 class="inline-flex items-center space-x-2">
+            <img src="assets/immune.png" alt="Fortified Immune Sys." class="">
+            <span class="font-black text-[#00A2F7] text-xl">Fortified Immune Sys.</span>
+          </h4>
+          <p class="text-sm sm:text-base md:text-lg">
+            Sharpen your mind and enhance concentration, helping you perform your best in all tasks.
+          </p>
+        </div>
+      </div>
+      
+    </section>
+
+    <!-- SHOP NOW -->
+    <section class="flex justify-center mb-12">
+      <div class="px-4 sm:px-0">
+        <a href="#shop" class="inline-block bg-[#00A2F7] shadow-outline transition-transform duration-300 hover:-translate-y-1 text-white px-40 py-3 rounded-full shadow hover:bg-white hover:text-[#00A2F7] ">
+          SHOP NOW
+        </a>
+        <div class="flex gap-x-1 mt-2 justify-center">
+          <div class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M15.8925 6.55618C15.9697 6.17624 15.6606 5.7203 15.2743 5.7203L10.8696 5.11239L8.86045 1.16094C8.78318 1.00897 8.7059 0.932977 8.55135 0.856988C8.16498 0.62902 7.70133 0.780999 7.46951 1.16094L5.53764 5.11239L1.13297 5.7203C0.901149 5.7203 0.746599 5.79629 0.669324 5.94827C0.360225 6.25223 0.360225 6.70816 0.669324 7.01212L3.83759 10.0517L3.06484 14.3831C3.06484 14.5351 3.06484 14.687 3.14212 14.839C3.37394 15.219 3.83759 15.3709 4.22397 15.143L8.16498 13.0913L12.106 15.143C12.1833 15.219 12.3378 15.219 12.4924 15.219C12.5696 15.219 12.5696 15.219 12.6469 15.219C13.0333 15.143 13.3424 14.763 13.2651 14.3071L12.4924 9.9757L15.6606 6.93613C15.8152 6.86014 15.8925 6.70816 15.8925 6.55618Z" fill="#FF00DE"/>
+              </svg>
+          </div>
+          <div class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M15.8925 6.55618C15.9697 6.17624 15.6606 5.7203 15.2743 5.7203L10.8696 5.11239L8.86045 1.16094C8.78318 1.00897 8.7059 0.932977 8.55135 0.856988C8.16498 0.62902 7.70133 0.780999 7.46951 1.16094L5.53764 5.11239L1.13297 5.7203C0.901149 5.7203 0.746599 5.79629 0.669324 5.94827C0.360225 6.25223 0.360225 6.70816 0.669324 7.01212L3.83759 10.0517L3.06484 14.3831C3.06484 14.5351 3.06484 14.687 3.14212 14.839C3.37394 15.219 3.83759 15.3709 4.22397 15.143L8.16498 13.0913L12.106 15.143C12.1833 15.219 12.3378 15.219 12.4924 15.219C12.5696 15.219 12.5696 15.219 12.6469 15.219C13.0333 15.143 13.3424 14.763 13.2651 14.3071L12.4924 9.9757L15.6606 6.93613C15.8152 6.86014 15.8925 6.70816 15.8925 6.55618Z" fill="#FF00DE"/>
+              </svg>
+          </div>
+          <div class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M15.8925 6.55618C15.9697 6.17624 15.6606 5.7203 15.2743 5.7203L10.8696 5.11239L8.86045 1.16094C8.78318 1.00897 8.7059 0.932977 8.55135 0.856988C8.16498 0.62902 7.70133 0.780999 7.46951 1.16094L5.53764 5.11239L1.13297 5.7203C0.901149 5.7203 0.746599 5.79629 0.669324 5.94827C0.360225 6.25223 0.360225 6.70816 0.669324 7.01212L3.83759 10.0517L3.06484 14.3831C3.06484 14.5351 3.06484 14.687 3.14212 14.839C3.37394 15.219 3.83759 15.3709 4.22397 15.143L8.16498 13.0913L12.106 15.143C12.1833 15.219 12.3378 15.219 12.4924 15.219C12.5696 15.219 12.5696 15.219 12.6469 15.219C13.0333 15.143 13.3424 14.763 13.2651 14.3071L12.4924 9.9757L15.6606 6.93613C15.8152 6.86014 15.8925 6.70816 15.8925 6.55618Z" fill="#FF00DE"/>
+              </svg>
+          </div>
+          <div class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M15.8925 6.55618C15.9697 6.17624 15.6606 5.7203 15.2743 5.7203L10.8696 5.11239L8.86045 1.16094C8.78318 1.00897 8.7059 0.932977 8.55135 0.856988C8.16498 0.62902 7.70133 0.780999 7.46951 1.16094L5.53764 5.11239L1.13297 5.7203C0.901149 5.7203 0.746599 5.79629 0.669324 5.94827C0.360225 6.25223 0.360225 6.70816 0.669324 7.01212L3.83759 10.0517L3.06484 14.3831C3.06484 14.5351 3.06484 14.687 3.14212 14.839C3.37394 15.219 3.83759 15.3709 4.22397 15.143L8.16498 13.0913L12.106 15.143C12.1833 15.219 12.3378 15.219 12.4924 15.219C12.5696 15.219 12.5696 15.219 12.6469 15.219C13.0333 15.143 13.3424 14.763 13.2651 14.3071L12.4924 9.9757L15.6606 6.93613C15.8152 6.86014 15.8925 6.70816 15.8925 6.55618Z" fill="#FF00DE"/>
+              </svg>
+          </div>
+          <div class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M15.8925 6.55618C15.9697 6.17624 15.6606 5.7203 15.2743 5.7203L10.8696 5.11239L8.86045 1.16094C8.78318 1.00897 8.7059 0.932977 8.55135 0.856988C8.16498 0.62902 7.70133 0.780999 7.46951 1.16094L5.53764 5.11239L1.13297 5.7203C0.901149 5.7203 0.746599 5.79629 0.669324 5.94827C0.360225 6.25223 0.360225 6.70816 0.669324 7.01212L3.83759 10.0517L3.06484 14.3831C3.06484 14.5351 3.06484 14.687 3.14212 14.839C3.37394 15.219 3.83759 15.3709 4.22397 15.143L8.16498 13.0913L12.106 15.143C12.1833 15.219 12.3378 15.219 12.4924 15.219C12.5696 15.219 12.5696 15.219 12.6469 15.219C13.0333 15.143 13.3424 14.763 13.2651 14.3071L12.4924 9.9757L15.6606 6.93613C15.8152 6.86014 15.8925 6.70816 15.8925 6.55618Z" fill="#FF00DE"/>
+              </svg>
+          </div>
+          <div>Rated <span class="text-[#FF00DE] font-semibold">4.2/5</span> on  <span class="font-semibold">+2,4823</span> reviews</div>
+        </div>
+      </div>
+    </section>
+    
+    
+
+    <!-- BEST SELLERS SECTION -->
+    <section id="best-sellers" class="bg-[#85CF7F] py-16">
+      <div class=" px-4 text-center">
+        <h2 class="text-4xl sm:text-5xl text-[#FAFAFA] font-bold mb-8">Best Sellers</h2>
+        <div class="mb-6">
+          <button class="cursor-pointer inline-block bg-white shadow-outline transition-transform duration-300 hover:-translate-y-1 text-[#854DE9] px-5 py-3 rounded-full shadow hover:bg-opcatiy-25">
+            MOOD
+          </button>
+          <button class="cursor-pointer inline-block bg-white shadow-outline transition-transform duration-300 hover:-translate-y-1 text-[#854DE9] px-5 py-3 rounded-full shadow hover:bg-opcatiy-25">
+            HAPPY
+          </button>
+          <button class="cursor-pointer inline-block bg-white shadow-outline transition-transform duration-300 hover:-translate-y-1 text-[#854DE9] px-5 py-3 rounded-full shadow hover:bg-opcatiy-25">
+            HAPPY
+          </button>
+        </div>
+        <div class="flex justify-center flex-wrap gap-4">
+          <!-- Card-->
+          <div class="group bg-white p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-2xl hover:scale-105 hover:bg-gray-50">
+            <div class="overflow-hidden rounded">
+              <img src="assets/hero-bg.webp" alt="THC A Gummies" 
+                class="w-60 h-48 object-cover rounded mb-4 transition-transform duration-300 group-hover:scale-105" />
+            </div>
+          
+            <h3 class="text-xl text-start font-bold mb-2">THC A</h3>
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-2xl font-medium mb-4 inline-block me-2">$25</p>
+                <span class="opacity-25">$33</span>
+              </div>
+              <div class="flex items-center space-x-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 16 16" fill="none">
+                  <path d="M15.8925 6.55618C15.9697 6.17624 15.6606 5.7203 15.2743 5.7203L10.8696 5.11239L8.86045 1.16094C8.78318 1.00897 8.7059 0.932977 8.55135 0.856988C8.16498 0.62902 7.70133 0.780999 7.46951 1.16094L5.53764 5.11239L1.13297 5.7203C0.901149 5.7203 0.746599 5.79629 0.669324 5.94827C0.360225 6.25223 0.360225 6.70816 0.669324 7.01212L3.83759 10.0517L3.06484 14.3831C3.06484 14.5351 3.06484 14.687 3.14212 14.839C3.37394 15.219 3.83759 15.3709 4.22397 15.143L8.16498 13.0913L12.106 15.143C12.1833 15.219 12.3378 15.219 12.4924 15.219C12.5696 15.219 12.5696 15.219 12.6469 15.219C13.0333 15.143 13.3424 14.763 13.2651 14.3071L12.4924 9.9757L15.6606 6.93613C15.8152 6.86014 15.8925 6.70816 15.8925 6.55618Z" fill="#854DE9"/>
+                </svg>
+                <span class="text-sm">(100)</span>
+              </div>              
+            </div>
+          
+            <a href="#shop" class="inline-block bg-[#854DE9] shadow-outline transition-transform duration-300 hover:-translate-y-1 text-white px-12 py-3 rounded-full shadow ">
+              Shop Now
+            </a>
+          </div>
+          
+          <div class="group bg-white p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-2xl hover:scale-105 hover:bg-gray-50">
+            <div class="overflow-hidden rounded">
+              <img src="assets/hero-bg.webp" alt="THC A Gummies" 
+                class="w-60 h-48 object-cover rounded mb-4 transition-transform duration-300 group-hover:scale-105" />
+            </div>
+          
+            <h3 class="text-xl text-start font-bold mb-2">THC A</h3>
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-2xl font-medium mb-4 inline-block me-2">$25</p>
+                <span class="opacity-25">$33</span>
+              </div>
+              <div class="flex items-center space-x-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 16 16" fill="none">
+                  <path d="M15.8925 6.55618C15.9697 6.17624 15.6606 5.7203 15.2743 5.7203L10.8696 5.11239L8.86045 1.16094C8.78318 1.00897 8.7059 0.932977 8.55135 0.856988C8.16498 0.62902 7.70133 0.780999 7.46951 1.16094L5.53764 5.11239L1.13297 5.7203C0.901149 5.7203 0.746599 5.79629 0.669324 5.94827C0.360225 6.25223 0.360225 6.70816 0.669324 7.01212L3.83759 10.0517L3.06484 14.3831C3.06484 14.5351 3.06484 14.687 3.14212 14.839C3.37394 15.219 3.83759 15.3709 4.22397 15.143L8.16498 13.0913L12.106 15.143C12.1833 15.219 12.3378 15.219 12.4924 15.219C12.5696 15.219 12.5696 15.219 12.6469 15.219C13.0333 15.143 13.3424 14.763 13.2651 14.3071L12.4924 9.9757L15.6606 6.93613C15.8152 6.86014 15.8925 6.70816 15.8925 6.55618Z" fill="#854DE9"/>
+                </svg>
+                <span class="text-sm">(100)</span>
+              </div>              
+            </div>
+          
+            <a href="#shop" class="inline-block bg-[#854DE9] shadow-outline transition-transform duration-300 hover:-translate-y-1 text-white px-12 py-3 rounded-full shadow ">
+              Shop Now
+            </a>
+          </div>
+          
+          <div class="group bg-white p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-2xl hover:scale-105 hover:bg-gray-50">
+            <div class="overflow-hidden rounded">
+              <img src="assets/hero-bg.webp" alt="THC A Gummies" 
+                class="w-60 h-48 object-cover rounded mb-4 transition-transform duration-300 group-hover:scale-105" />
+            </div>
+          
+            <h3 class="text-xl text-start font-bold mb-2">THC A</h3>
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-2xl font-medium mb-4 inline-block me-2">$25</p>
+                <span class="opacity-25">$33</span>
+              </div>
+              <div class="flex items-center space-x-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 16 16" fill="none">
+                  <path d="M15.8925 6.55618C15.9697 6.17624 15.6606 5.7203 15.2743 5.7203L10.8696 5.11239L8.86045 1.16094C8.78318 1.00897 8.7059 0.932977 8.55135 0.856988C8.16498 0.62902 7.70133 0.780999 7.46951 1.16094L5.53764 5.11239L1.13297 5.7203C0.901149 5.7203 0.746599 5.79629 0.669324 5.94827C0.360225 6.25223 0.360225 6.70816 0.669324 7.01212L3.83759 10.0517L3.06484 14.3831C3.06484 14.5351 3.06484 14.687 3.14212 14.839C3.37394 15.219 3.83759 15.3709 4.22397 15.143L8.16498 13.0913L12.106 15.143C12.1833 15.219 12.3378 15.219 12.4924 15.219C12.5696 15.219 12.5696 15.219 12.6469 15.219C13.0333 15.143 13.3424 14.763 13.2651 14.3071L12.4924 9.9757L15.6606 6.93613C15.8152 6.86014 15.8925 6.70816 15.8925 6.55618Z" fill="#854DE9"/>
+                </svg>
+                <span class="text-sm">(100)</span>
+              </div>              
+            </div>
+          
+            <a href="#shop" class="inline-block bg-[#854DE9] shadow-outline transition-transform duration-300 hover:-translate-y-1 text-white px-12 py-3 rounded-full shadow ">
+              Shop Now
+            </a>
+          </div>
+          
+        </div>
+        <div class="mt-12">
+          <a href="#shop" class="inline-block bg-white shadow-outline transition-transform duration-300 hover:-translate-y-1 text-[#854DE9] px-40 py-3 rounded-full shadow hover:bg-[#854DE9] hover:text-white ">
+            SHOP NOW
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROVEN BENEFITS SECTION -->
+    <section id="proven-benefits" class="py-16 bg-[#854DE9]">
+      <div class="max-w-7xl mx-auto px-4 text-center">
+        <h2 class="text-4xl sm:text-5xl font-bold text-white mb-8">OUR THC GUMMIES <br> ARE PROVEN TO:</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="p-6 grid place-items-center">
+            <div class="w-24 h-24 rounded-full bg-[#9D71ED] flex justify-center items-center">
+              <img src="assets/Sleep.png" class="object-fit" alt="Sleep image">
+            </div>
+            <p class="text-5xl font-bold text-[#FAFAFA] mt-2">79%</p>
+            <p class="mt-2 text-[#FAFAFA] text-xl font-medium">Reported <span class="font-bold italic">Better Sleep</span> after
+              their first dose</p>
+          </div>
+          <div class="p-6 grid place-items-center">
+            <div class="w-24 h-24 rounded-full bg-[#9D71ED] flex justify-center items-center">
+              <img src="assets/Glowing skin.png" class="object-fit" alt="Glowing Skin image">
+            </div>
+            <p class="text-5xl font-bold text-[#FAFAFA] mt-2">81%</p>
+            <p class="mt-2 text-[#FAFAFA] text-xl font-medium">Experienced a visibily
+              <span class="font-bold italic">leaner gut</span> and face after 1-2 weeks of use</p>
+          </div>
+          <div class="p-6 grid place-items-center">
+            <div class="w-24 h-24 rounded-full bg-[#9D71ED] flex justify-center items-center">
+              <img src="assets/Calm.png" class="object-fit" alt="Calm image">
+            </div>
+            <p class="text-5xl font-bold text-[#FAFAFA] mt-2">81%</p>
+            <p class="mt-2 text-[#FAFAFA] text-xl font-medium">Noticed a 
+              <span class="font-bold italic">calmer mind</span> , and being able to think clearly</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section id="testimonials" class="bg-gray-50 py-16 relative w-full">
+      <div class="px-4">
+        <h2 class="text-4xl sm:text-6xl font-bold text-center mb-8">Loved By Hundreds</h2>
+        <div class="flex space-x-4 overflow-x-auto overflow-y-hidden scrollbar-hide py-8 whitespace-nowrap" style="scrollbar-width: none; -ms-overflow-style: none;">
+
+          <article class="min-w-[250px] bg-white p-2 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg hover:scale-105 hover:bg-gray-50">
+            <div class="overflow-hidden rounded flex justify-center p-2"> 
+              <img src="assets/hero-bg.webp" alt="Audrey Morabito" 
+                   class="w-60 h-48 object-cover rounded transition-transform duration-300" />
+            </div>
+            <div class="flex items-center justify-between">
+              <h5 class="font-black">Audrey Morabito</h5>
+              <div class="flex items-center space-x-0.5">
+                <span class="text-[#854DE9] flex gap-x-0.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 16 16" fill="currentColor">
+                    <path d="M15.8925 6.55618C15.9697 6.17624 15.6606 5.7203 15.2743 5.7203L10.8696 5.11239L8.86045 1.16094C8.78318 1.00897 8.7059 0.932977 8.55135 0.856988C8.16498 0.62902 7.70133 0.780999 7.46951 1.16094L5.53764 5.11239L1.13297 5.7203C0.901149 5.7203 0.746599 5.79629 0.669324 5.94827C0.360225 6.25223 0.360225 6.70816 0.669324 7.01212L3.83759 10.0517L3.06484 14.3831C3.06484 14.5351 3.06484 14.687 3.14212 14.839C3.37394 15.219 3.83759 15.3709 4.22397 15.143L8.16498 13.0913L12.106 15.143C12.1833 15.219 12.3378 15.219 12.4924 15.219C12.5696 15.219 12.5696 15.219 12.6469 15.219C13.0333 15.143 13.3424 14.763 13.2651 14.3071L12.4924 9.9757L15.6606 6.93613C15.8152 6.86014 15.8925 6.70816 15.8925 6.55618Z"/>
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 16 16" fill="currentColor">
+                    <path d="M15.8925 6.55618C15.9697 6.17624 15.6606 5.7203 15.2743 5.7203L10.8696 5.11239L8.86045 1.16094C8.78318 1.00897 8.7059 0.932977 8.55135 0.856988C8.16498 0.62902 7.70133 0.780999 7.46951 1.16094L5.53764 5.11239L1.13297 5.7203C0.901149 5.7203 0.746599 5.79629 0.669324 5.94827C0.360225 6.25223 0.360225 6.70816 0.669324 7.01212L3.83759 10.0517L3.06484 14.3831C3.06484 14.5351 3.06484 14.687 3.14212 14.839C3.37394 15.219 3.83759 15.3709 4.22397 15.143L8.16498 13.0913L12.106 15.143C12.1833 15.219 12.3378 15.219 12.4924 15.219C12.5696 15.219 12.5696 15.219 12.6469 15.219C13.0333 15.143 13.3424 14.763 13.2651 14.3071L12.4924 9.9757L15.6606 6.93613C15.8152 6.86014 15.8925 6.70816 15.8925 6.55618Z"/>
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 16 16" fill="currentColor">
+                    <path d="M15.8925 6.55618C15.9697 6.17624 15.6606 5.7203 15.2743 5.7203L10.8696 5.11239L8.86045 1.16094C8.78318 1.00897 8.7059 0.932977 8.55135 0.856988C8.16498 0.62902 7.70133 0.780999 7.46951 1.16094L5.53764 5.11239L1.13297 5.7203C0.901149 5.7203 0.746599 5.79629 0.669324 5.94827C0.360225 6.25223 0.360225 6.70816 0.669324 7.01212L3.83759 10.0517L3.06484 14.3831C3.06484 14.5351 3.06484 14.687 3.14212 14.839C3.37394 15.219 3.83759 15.3709 4.22397 15.143L8.16498 13.0913L12.106 15.143C12.1833 15.219 12.3378 15.219 12.4924 15.219C12.5696 15.219 12.5696 15.219 12.6469 15.219C13.0333 15.143 13.3424 14.763 13.2651 14.3071L12.4924 9.9757L15.6606 6.93613C15.8152 6.86014 15.8925 6.70816 15.8925 6.55618Z"/>
+                  </svg>
+                </span>
+              </div>              
+            </div>
+            <p class="text-sm font-medium mb-4 break-words whitespace-normal">Sharpen your mind and enhance concentration, helping you perform your best in all tasks and enhance concentration.</p>
+          </article>
+          <article class="min-w-[250px] bg-white p-2 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg hover:scale-105 hover:bg-gray-50">
+            <div class="overflow-hidden rounded flex justify-center p-2"> 
+              <img src="assets/hero-bg.webp" alt="Audrey Morabito" 
+                   class="w-60 h-48 object-cover rounded transition-transform duration-300" />
+            </div>
+            <div class="flex items-center justify-between">
+              <h5 class="font-black">Audrey Morabito</h5>
+              <div class="flex items-center space-x-0.5">
+                <span class="text-[#854DE9] flex gap-x-0.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 16 16" fill="currentColor">
+                    <path d="M15.8925 6.55618C15.9697 6.17624 15.6606 5.7203 15.2743 5.7203L10.8696 5.11239L8.86045 1.16094C8.78318 1.00897 8.7059 0.932977 8.55135 0.856988C8.16498 0.62902 7.70133 0.780999 7.46951 1.16094L5.53764 5.11239L1.13297 5.7203C0.901149 5.7203 0.746599 5.79629 0.669324 5.94827C0.360225 6.25223 0.360225 6.70816 0.669324 7.01212L3.83759 10.0517L3.06484 14.3831C3.06484 14.5351 3.06484 14.687 3.14212 14.839C3.37394 15.219 3.83759 15.3709 4.22397 15.143L8.16498 13.0913L12.106 15.143C12.1833 15.219 12.3378 15.219 12.4924 15.219C12.5696 15.219 12.5696 15.219 12.6469 15.219C13.0333 15.143 13.3424 14.763 13.2651 14.3071L12.4924 9.9757L15.6606 6.93613C15.8152 6.86014 15.8925 6.70816 15.8925 6.55618Z"/>
+                  </svg>
+                </span>
+              </div>              
+            </div>
+            <p class="text-sm font-medium mb-4 break-words whitespace-normal">Sharpen your mind and enhance concentration, helping you perform your best in all tasks and enhance concentration.</p>
+          </article>
+          <article class="min-w-[250px] bg-white p-2 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg hover:scale-105 hover:bg-gray-50">
+            <div class="overflow-hidden rounded flex justify-center p-2"> 
+              <img src="assets/hero-bg.webp" alt="Audrey Morabito" 
+                   class="w-60 h-48 object-cover rounded transition-transform duration-300" />
+            </div>
+            <div class="flex items-center justify-between">
+              <h5 class="font-black">Audrey Morabito</h5>
+              <div class="flex items-center space-x-0.5">
+                <span class="text-[#854DE9] flex gap-x-0.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 16 16" fill="currentColor">
+                    <path d="M15.8925 6.55618C15.9697 6.17624 15.6606 5.7203 15.2743 5.7203L10.8696 5.11239L8.86045 1.16094C8.78318 1.00897 8.7059 0.932977 8.55135 0.856988C8.16498 0.62902 7.70133 0.780999 7.46951 1.16094L5.53764 5.11239L1.13297 5.7203C0.901149 5.7203 0.746599 5.79629 0.669324 5.94827C0.360225 6.25223 0.360225 6.70816 0.669324 7.01212L3.83759 10.0517L3.06484 14.3831C3.06484 14.5351 3.06484 14.687 3.14212 14.839C3.37394 15.219 3.83759 15.3709 4.22397 15.143L8.16498 13.0913L12.106 15.143C12.1833 15.219 12.3378 15.219 12.4924 15.219C12.5696 15.219 12.5696 15.219 12.6469 15.219C13.0333 15.143 13.3424 14.763 13.2651 14.3071L12.4924 9.9757L15.6606 6.93613C15.8152 6.86014 15.8925 6.70816 15.8925 6.55618Z"/>
+                  </svg>
+                </span>
+              </div>              
+            </div>
+            <p class="text-sm font-medium mb-4 break-words whitespace-normal">Sharpen your mind and enhance concentration, helping you perform your best in all tasks and enhance concentration.</p>
+          </article>
+          <article class="min-w-[250px] bg-white p-2 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg hover:scale-105 hover:bg-gray-50">
+            <div class="overflow-hidden rounded flex justify-center p-2"> 
+              <img src="assets/hero-bg.webp" alt="Audrey Morabito" 
+                   class="w-60 h-48 object-cover rounded transition-transform duration-300" />
+            </div>
+            <div class="flex items-center justify-between">
+              <h5 class="font-black">Audrey Morabito</h5>
+              <div class="flex items-center space-x-0.5">
+                <span class="text-[#854DE9] flex gap-x-0.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 16 16" fill="currentColor">
+                    <path d="M15.8925 6.55618C15.9697 6.17624 15.6606 5.7203 15.2743 5.7203L10.8696 5.11239L8.86045 1.16094C8.78318 1.00897 8.7059 0.932977 8.55135 0.856988C8.16498 0.62902 7.70133 0.780999 7.46951 1.16094L5.53764 5.11239L1.13297 5.7203C0.901149 5.7203 0.746599 5.79629 0.669324 5.94827C0.360225 6.25223 0.360225 6.70816 0.669324 7.01212L3.83759 10.0517L3.06484 14.3831C3.06484 14.5351 3.06484 14.687 3.14212 14.839C3.37394 15.219 3.83759 15.3709 4.22397 15.143L8.16498 13.0913L12.106 15.143C12.1833 15.219 12.3378 15.219 12.4924 15.219C12.5696 15.219 12.5696 15.219 12.6469 15.219C13.0333 15.143 13.3424 14.763 13.2651 14.3071L12.4924 9.9757L15.6606 6.93613C15.8152 6.86014 15.8925 6.70816 15.8925 6.55618Z"/>
+                  </svg>
+                </span>
+              </div>              
+            </div>
+            <p class="text-sm font-medium mb-4 break-words whitespace-normal">Sharpen your mind and enhance concentration, helping you perform your best in all tasks and enhance concentration.</p>
+          </article>
+          <article class="min-w-[250px] bg-white p-2 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg hover:scale-105 hover:bg-gray-50">
+            <div class="overflow-hidden rounded flex justify-center p-2"> 
+              <img src="assets/hero-bg.webp" alt="Audrey Morabito" 
+                   class="w-60 h-48 object-cover rounded transition-transform duration-300" />
+            </div>
+            <div class="flex items-center justify-between">
+              <h5 class="font-black">Audrey Morabito</h5>
+              <div class="flex items-center space-x-0.5">
+                <span class="text-[#854DE9] flex gap-x-0.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 16 16" fill="currentColor">
+                    <path d="M15.8925 6.55618C15.9697 6.17624 15.6606 5.7203 15.2743 5.7203L10.8696 5.11239L8.86045 1.16094C8.78318 1.00897 8.7059 0.932977 8.55135 0.856988C8.16498 0.62902 7.70133 0.780999 7.46951 1.16094L5.53764 5.11239L1.13297 5.7203C0.901149 5.7203 0.746599 5.79629 0.669324 5.94827C0.360225 6.25223 0.360225 6.70816 0.669324 7.01212L3.83759 10.0517L3.06484 14.3831C3.06484 14.5351 3.06484 14.687 3.14212 14.839C3.37394 15.219 3.83759 15.3709 4.22397 15.143L8.16498 13.0913L12.106 15.143C12.1833 15.219 12.3378 15.219 12.4924 15.219C12.5696 15.219 12.5696 15.219 12.6469 15.219C13.0333 15.143 13.3424 14.763 13.2651 14.3071L12.4924 9.9757L15.6606 6.93613C15.8152 6.86014 15.8925 6.70816 15.8925 6.55618Z"/>
+                  </svg>
+                </span>
+              </div>              
+            </div>
+            <p class="text-sm font-medium mb-4 break-words whitespace-normal">Sharpen your mind and enhance concentration, helping you perform your best in all tasks and enhance concentration.</p>
+          </article>
+          <article class="min-w-[250px] bg-white p-2 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg hover:scale-105 hover:bg-gray-50">
+            <div class="overflow-hidden rounded flex justify-center p-2"> 
+              <img src="assets/hero-bg.webp" alt="Audrey Morabito" 
+                   class="w-60 h-48 object-cover rounded transition-transform duration-300" />
+            </div>
+            <div class="flex items-center justify-between">
+              <h5 class="font-black">Audrey Morabito</h5>
+              <div class="flex items-center space-x-0.5">
+                <span class="text-[#854DE9] flex gap-x-0.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 16 16" fill="currentColor">
+                    <path d="M15.8925 6.55618C15.9697 6.17624 15.6606 5.7203 15.2743 5.7203L10.8696 5.11239L8.86045 1.16094C8.78318 1.00897 8.7059 0.932977 8.55135 0.856988C8.16498 0.62902 7.70133 0.780999 7.46951 1.16094L5.53764 5.11239L1.13297 5.7203C0.901149 5.7203 0.746599 5.79629 0.669324 5.94827C0.360225 6.25223 0.360225 6.70816 0.669324 7.01212L3.83759 10.0517L3.06484 14.3831C3.06484 14.5351 3.06484 14.687 3.14212 14.839C3.37394 15.219 3.83759 15.3709 4.22397 15.143L8.16498 13.0913L12.106 15.143C12.1833 15.219 12.3378 15.219 12.4924 15.219C12.5696 15.219 12.5696 15.219 12.6469 15.219C13.0333 15.143 13.3424 14.763 13.2651 14.3071L12.4924 9.9757L15.6606 6.93613C15.8152 6.86014 15.8925 6.70816 15.8925 6.55618Z"/>
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 16 16" fill="currentColor">
+                    <path d="M15.8925 6.55618C15.9697 6.17624 15.6606 5.7203 15.2743 5.7203L10.8696 5.11239L8.86045 1.16094C8.78318 1.00897 8.7059 0.932977 8.55135 0.856988C8.16498 0.62902 7.70133 0.780999 7.46951 1.16094L5.53764 5.11239L1.13297 5.7203C0.901149 5.7203 0.746599 5.79629 0.669324 5.94827C0.360225 6.25223 0.360225 6.70816 0.669324 7.01212L3.83759 10.0517L3.06484 14.3831C3.06484 14.5351 3.06484 14.687 3.14212 14.839C3.37394 15.219 3.83759 15.3709 4.22397 15.143L8.16498 13.0913L12.106 15.143C12.1833 15.219 12.3378 15.219 12.4924 15.219C12.5696 15.219 12.5696 15.219 12.6469 15.219C13.0333 15.143 13.3424 14.763 13.2651 14.3071L12.4924 9.9757L15.6606 6.93613C15.8152 6.86014 15.8925 6.70816 15.8925 6.55618Z"/>
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 16 16" fill="currentColor">
+                    <path d="M15.8925 6.55618C15.9697 6.17624 15.6606 5.7203 15.2743 5.7203L10.8696 5.11239L8.86045 1.16094C8.78318 1.00897 8.7059 0.932977 8.55135 0.856988C8.16498 0.62902 7.70133 0.780999 7.46951 1.16094L5.53764 5.11239L1.13297 5.7203C0.901149 5.7203 0.746599 5.79629 0.669324 5.94827C0.360225 6.25223 0.360225 6.70816 0.669324 7.01212L3.83759 10.0517L3.06484 14.3831C3.06484 14.5351 3.06484 14.687 3.14212 14.839C3.37394 15.219 3.83759 15.3709 4.22397 15.143L8.16498 13.0913L12.106 15.143C12.1833 15.219 12.3378 15.219 12.4924 15.219C12.5696 15.219 12.5696 15.219 12.6469 15.219C13.0333 15.143 13.3424 14.763 13.2651 14.3071L12.4924 9.9757L15.6606 6.93613C15.8152 6.86014 15.8925 6.70816 15.8925 6.55618Z"/>
+                  </svg>
+                </span>
+              </div>              
+            </div>
+            <p class="text-sm font-medium mb-4 break-words whitespace-normal">Sharpen your mind and enhance concentration, helping you perform your best in all tasks and enhance concentration.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+    
+
+    <!-- COMPARISON SECTION -->
+    <section id="comparison" class="bg-gray-50 py-16">
+      <div class=" px-4">
+        <h2 class="text-4xl sm:text-6xl font-bold text-center mb-12">There’s No <br> Competition</h2>
+        <div class="overflow-x-auto w-full sm:w-1/2 mx-auto">
+          <table class="min-w-full">
+            <thead>
+              <tr>
+                <th class="px-4 py-3"></th>
+                <th class="px-4 py-3 grid place-items-center bg-[#00A2F7] rounded-t-lg">
+                  <div class="w-[96px] h-[90px]">
+                    <img src="assets/logo.webp" alt="FEEL GOOD">
+                  </div>
+                </th>
+                <th class="px-4 py-3 font-bold text-xl sm:text-2xl">Other Brands</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="px-4 py-6 font-bold text-xl sm:text-2xl bg-white rounded-tl-lg border-b-8 border-gray-50">Pure &amp; Potent</td>
+                <td class="px-4 py-6 text-center bg-[#00A2F7] text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="currentColor" class="mx-auto">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.9168 21.6795C16.8275 21.6795 21.6187 16.8883 21.6187 10.9776C21.6187 5.0669 16.8275 0.275635 10.9168 0.275635C5.00611 0.275635 0.214844 5.0669 0.214844 10.9776C0.214844 16.8883 5.00611 21.6795 10.9168 21.6795ZM14.701 7.19337C14.902 6.9927 15.1744 6.88008 15.4584 6.88028C15.7424 6.88048 16.0147 6.99349 16.2153 7.19445C16.416 7.3954 16.5286 7.66784 16.5284 7.95183C16.5282 8.23582 16.4152 8.5081 16.2143 8.70877L10.1644 14.7586L10.1602 14.7629C10.061 14.8626 9.94312 14.9417 9.81326 14.9957C9.68341 15.0497 9.54417 15.0775 9.40354 15.0775C9.26291 15.0775 9.12366 15.0497 8.99381 14.9957C8.86396 14.9417 8.74607 14.8626 8.64691 14.7629L8.64263 14.7586L5.61933 11.7353C5.51711 11.6366 5.43558 11.5185 5.3795 11.3879C5.32341 11.2573 5.29389 11.1169 5.29265 10.9748C5.29142 10.8327 5.31849 10.6918 5.3723 10.5603C5.42611 10.4287 5.50558 10.3092 5.60606 10.2088C5.70655 10.1083 5.82604 10.0288 5.95756 9.975C6.08908 9.92119 6.23001 9.89411 6.3721 9.89535C6.5142 9.89658 6.65464 9.92611 6.7852 9.98219C6.91577 10.0383 7.03386 10.1198 7.13258 10.222L9.40354 12.4919L14.701 7.19445V7.19337Z"/>
+                  </svg>
+                </td>                
+                <td class="px-4 py-6 bg-white rounded-tr-lg text-center text-[#BFBFBF]">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 33 33" fill="currentColor" class="mx-auto">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.9085 32.9691C25.7739 32.9691 32.9607 25.7823 32.9607 16.9169C32.9607 8.05162 25.7739 0.864868 16.9085 0.864868C8.04321 0.864868 0.856445 8.05162 0.856445 16.9169C0.856445 25.7823 8.04321 32.9691 16.9085 32.9691ZM11.6316 9.06035C10.9192 8.348 9.76429 8.348 9.05194 9.06035C8.33959 9.77271 8.33959 10.9277 9.05194 11.64L14.3289 16.9169L9.05194 22.1938C8.33959 22.9062 8.33959 24.0612 9.05194 24.7736C9.76429 25.4859 10.9192 25.4859 11.6316 24.7736L16.9085 19.4967L22.1854 24.7736C22.8978 25.4859 24.0528 25.4859 24.7652 24.7736C25.4775 24.0612 25.4775 22.9062 24.7652 22.1938L19.4883 16.9169L24.7652 11.64C25.4775 10.9277 25.4775 9.77271 24.7652 9.06035C24.0528 8.348 22.8978 8.348 22.1854 9.06035L16.9085 14.3373L11.6316 9.06035Z"/>
+                  </svg>
+                  
+                </td>
+              </tr>
+              <tr>
+                <td class="px-4 py-6 font-bold text-xl sm:text-2xl bg-white border-b-8 border-gray-50">Delicious Tasting</td>
+                <td class="px-4 py-6 text-center bg-[#00A2F7] text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="currentColor" class="mx-auto">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.9168 21.6795C16.8275 21.6795 21.6187 16.8883 21.6187 10.9776C21.6187 5.0669 16.8275 0.275635 10.9168 0.275635C5.00611 0.275635 0.214844 5.0669 0.214844 10.9776C0.214844 16.8883 5.00611 21.6795 10.9168 21.6795ZM14.701 7.19337C14.902 6.9927 15.1744 6.88008 15.4584 6.88028C15.7424 6.88048 16.0147 6.99349 16.2153 7.19445C16.416 7.3954 16.5286 7.66784 16.5284 7.95183C16.5282 8.23582 16.4152 8.5081 16.2143 8.70877L10.1644 14.7586L10.1602 14.7629C10.061 14.8626 9.94312 14.9417 9.81326 14.9957C9.68341 15.0497 9.54417 15.0775 9.40354 15.0775C9.26291 15.0775 9.12366 15.0497 8.99381 14.9957C8.86396 14.9417 8.74607 14.8626 8.64691 14.7629L8.64263 14.7586L5.61933 11.7353C5.51711 11.6366 5.43558 11.5185 5.3795 11.3879C5.32341 11.2573 5.29389 11.1169 5.29265 10.9748C5.29142 10.8327 5.31849 10.6918 5.3723 10.5603C5.42611 10.4287 5.50558 10.3092 5.60606 10.2088C5.70655 10.1083 5.82604 10.0288 5.95756 9.975C6.08908 9.92119 6.23001 9.89411 6.3721 9.89535C6.5142 9.89658 6.65464 9.92611 6.7852 9.98219C6.91577 10.0383 7.03386 10.1198 7.13258 10.222L9.40354 12.4919L14.701 7.19445V7.19337Z"/>
+                  </svg>
+                </td> 
+                <td class="px-4 py-6 bg-white text-center text-[#BFBFBF]">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 33 33" fill="currentColor" class="mx-auto">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.9085 32.9691C25.7739 32.9691 32.9607 25.7823 32.9607 16.9169C32.9607 8.05162 25.7739 0.864868 16.9085 0.864868C8.04321 0.864868 0.856445 8.05162 0.856445 16.9169C0.856445 25.7823 8.04321 32.9691 16.9085 32.9691ZM11.6316 9.06035C10.9192 8.348 9.76429 8.348 9.05194 9.06035C8.33959 9.77271 8.33959 10.9277 9.05194 11.64L14.3289 16.9169L9.05194 22.1938C8.33959 22.9062 8.33959 24.0612 9.05194 24.7736C9.76429 25.4859 10.9192 25.4859 11.6316 24.7736L16.9085 19.4967L22.1854 24.7736C22.8978 25.4859 24.0528 25.4859 24.7652 24.7736C25.4775 24.0612 25.4775 22.9062 24.7652 22.1938L19.4883 16.9169L24.7652 11.64C25.4775 10.9277 25.4775 9.77271 24.7652 9.06035C24.0528 8.348 22.8978 8.348 22.1854 9.06035L16.9085 14.3373L11.6316 9.06035Z"/>
+                  </svg>
+                  
+                </td>
+              </tr>
+              <tr>
+                <td class="px-4 py-6 font-bold text-xl sm:text-2xl bg-white border-b-8 border-gray-50">All Natural &amp; Vegan</td>
+                <td class="px-4 py-6 text-center bg-[#00A2F7] text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="currentColor" class="mx-auto">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.9168 21.6795C16.8275 21.6795 21.6187 16.8883 21.6187 10.9776C21.6187 5.0669 16.8275 0.275635 10.9168 0.275635C5.00611 0.275635 0.214844 5.0669 0.214844 10.9776C0.214844 16.8883 5.00611 21.6795 10.9168 21.6795ZM14.701 7.19337C14.902 6.9927 15.1744 6.88008 15.4584 6.88028C15.7424 6.88048 16.0147 6.99349 16.2153 7.19445C16.416 7.3954 16.5286 7.66784 16.5284 7.95183C16.5282 8.23582 16.4152 8.5081 16.2143 8.70877L10.1644 14.7586L10.1602 14.7629C10.061 14.8626 9.94312 14.9417 9.81326 14.9957C9.68341 15.0497 9.54417 15.0775 9.40354 15.0775C9.26291 15.0775 9.12366 15.0497 8.99381 14.9957C8.86396 14.9417 8.74607 14.8626 8.64691 14.7629L8.64263 14.7586L5.61933 11.7353C5.51711 11.6366 5.43558 11.5185 5.3795 11.3879C5.32341 11.2573 5.29389 11.1169 5.29265 10.9748C5.29142 10.8327 5.31849 10.6918 5.3723 10.5603C5.42611 10.4287 5.50558 10.3092 5.60606 10.2088C5.70655 10.1083 5.82604 10.0288 5.95756 9.975C6.08908 9.92119 6.23001 9.89411 6.3721 9.89535C6.5142 9.89658 6.65464 9.92611 6.7852 9.98219C6.91577 10.0383 7.03386 10.1198 7.13258 10.222L9.40354 12.4919L14.701 7.19445V7.19337Z"/>
+                  </svg>
+                </td> 
+                <td class="px-4 py-6 bg-white text-center text-[#BFBFBF]">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 33 33" fill="currentColor" class="mx-auto">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.9085 32.9691C25.7739 32.9691 32.9607 25.7823 32.9607 16.9169C32.9607 8.05162 25.7739 0.864868 16.9085 0.864868C8.04321 0.864868 0.856445 8.05162 0.856445 16.9169C0.856445 25.7823 8.04321 32.9691 16.9085 32.9691ZM11.6316 9.06035C10.9192 8.348 9.76429 8.348 9.05194 9.06035C8.33959 9.77271 8.33959 10.9277 9.05194 11.64L14.3289 16.9169L9.05194 22.1938C8.33959 22.9062 8.33959 24.0612 9.05194 24.7736C9.76429 25.4859 10.9192 25.4859 11.6316 24.7736L16.9085 19.4967L22.1854 24.7736C22.8978 25.4859 24.0528 25.4859 24.7652 24.7736C25.4775 24.0612 25.4775 22.9062 24.7652 22.1938L19.4883 16.9169L24.7652 11.64C25.4775 10.9277 25.4775 9.77271 24.7652 9.06035C24.0528 8.348 22.8978 8.348 22.1854 9.06035L16.9085 14.3373L11.6316 9.06035Z"/>
+                  </svg>
+                  
+                </td>
+              </tr>
+              <tr>
+                <td class="px-4 py-6 font-bold text-xl sm:text-2xl bg-white border-b-8 border-gray-50">3rd Party Tested</td>
+                <td class="px-4 py-6 text-center bg-[#00A2F7] text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="currentColor" class="mx-auto">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.9168 21.6795C16.8275 21.6795 21.6187 16.8883 21.6187 10.9776C21.6187 5.0669 16.8275 0.275635 10.9168 0.275635C5.00611 0.275635 0.214844 5.0669 0.214844 10.9776C0.214844 16.8883 5.00611 21.6795 10.9168 21.6795ZM14.701 7.19337C14.902 6.9927 15.1744 6.88008 15.4584 6.88028C15.7424 6.88048 16.0147 6.99349 16.2153 7.19445C16.416 7.3954 16.5286 7.66784 16.5284 7.95183C16.5282 8.23582 16.4152 8.5081 16.2143 8.70877L10.1644 14.7586L10.1602 14.7629C10.061 14.8626 9.94312 14.9417 9.81326 14.9957C9.68341 15.0497 9.54417 15.0775 9.40354 15.0775C9.26291 15.0775 9.12366 15.0497 8.99381 14.9957C8.86396 14.9417 8.74607 14.8626 8.64691 14.7629L8.64263 14.7586L5.61933 11.7353C5.51711 11.6366 5.43558 11.5185 5.3795 11.3879C5.32341 11.2573 5.29389 11.1169 5.29265 10.9748C5.29142 10.8327 5.31849 10.6918 5.3723 10.5603C5.42611 10.4287 5.50558 10.3092 5.60606 10.2088C5.70655 10.1083 5.82604 10.0288 5.95756 9.975C6.08908 9.92119 6.23001 9.89411 6.3721 9.89535C6.5142 9.89658 6.65464 9.92611 6.7852 9.98219C6.91577 10.0383 7.03386 10.1198 7.13258 10.222L9.40354 12.4919L14.701 7.19445V7.19337Z"/>
+                  </svg>
+                </td> 
+                <td class="px-4 py-6 bg-white text-center text-[#BFBFBF]">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 33 33" fill="currentColor" class="mx-auto">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.9085 32.9691C25.7739 32.9691 32.9607 25.7823 32.9607 16.9169C32.9607 8.05162 25.7739 0.864868 16.9085 0.864868C8.04321 0.864868 0.856445 8.05162 0.856445 16.9169C0.856445 25.7823 8.04321 32.9691 16.9085 32.9691ZM11.6316 9.06035C10.9192 8.348 9.76429 8.348 9.05194 9.06035C8.33959 9.77271 8.33959 10.9277 9.05194 11.64L14.3289 16.9169L9.05194 22.1938C8.33959 22.9062 8.33959 24.0612 9.05194 24.7736C9.76429 25.4859 10.9192 25.4859 11.6316 24.7736L16.9085 19.4967L22.1854 24.7736C22.8978 25.4859 24.0528 25.4859 24.7652 24.7736C25.4775 24.0612 25.4775 22.9062 24.7652 22.1938L19.4883 16.9169L24.7652 11.64C25.4775 10.9277 25.4775 9.77271 24.7652 9.06035C24.0528 8.348 22.8978 8.348 22.1854 9.06035L16.9085 14.3373L11.6316 9.06035Z"/>
+                  </svg>
+                  
+                </td>
+              </tr>
+              <tr>
+                <td class="px-4 py-6 font-bold text-xl sm:text-2xl bg-white border-b-8 border-gray-50">Additive Free</td>
+                <td class="px-4 py-6 text-center bg-[#00A2F7] text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="currentColor" class="mx-auto">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.9168 21.6795C16.8275 21.6795 21.6187 16.8883 21.6187 10.9776C21.6187 5.0669 16.8275 0.275635 10.9168 0.275635C5.00611 0.275635 0.214844 5.0669 0.214844 10.9776C0.214844 16.8883 5.00611 21.6795 10.9168 21.6795ZM14.701 7.19337C14.902 6.9927 15.1744 6.88008 15.4584 6.88028C15.7424 6.88048 16.0147 6.99349 16.2153 7.19445C16.416 7.3954 16.5286 7.66784 16.5284 7.95183C16.5282 8.23582 16.4152 8.5081 16.2143 8.70877L10.1644 14.7586L10.1602 14.7629C10.061 14.8626 9.94312 14.9417 9.81326 14.9957C9.68341 15.0497 9.54417 15.0775 9.40354 15.0775C9.26291 15.0775 9.12366 15.0497 8.99381 14.9957C8.86396 14.9417 8.74607 14.8626 8.64691 14.7629L8.64263 14.7586L5.61933 11.7353C5.51711 11.6366 5.43558 11.5185 5.3795 11.3879C5.32341 11.2573 5.29389 11.1169 5.29265 10.9748C5.29142 10.8327 5.31849 10.6918 5.3723 10.5603C5.42611 10.4287 5.50558 10.3092 5.60606 10.2088C5.70655 10.1083 5.82604 10.0288 5.95756 9.975C6.08908 9.92119 6.23001 9.89411 6.3721 9.89535C6.5142 9.89658 6.65464 9.92611 6.7852 9.98219C6.91577 10.0383 7.03386 10.1198 7.13258 10.222L9.40354 12.4919L14.701 7.19445V7.19337Z"/>
+                  </svg>
+                </td> 
+                <td class="px-4 py-6 bg-white text-center text-[#BFBFBF]">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 33 33" fill="currentColor" class="mx-auto">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.9085 32.9691C25.7739 32.9691 32.9607 25.7823 32.9607 16.9169C32.9607 8.05162 25.7739 0.864868 16.9085 0.864868C8.04321 0.864868 0.856445 8.05162 0.856445 16.9169C0.856445 25.7823 8.04321 32.9691 16.9085 32.9691ZM11.6316 9.06035C10.9192 8.348 9.76429 8.348 9.05194 9.06035C8.33959 9.77271 8.33959 10.9277 9.05194 11.64L14.3289 16.9169L9.05194 22.1938C8.33959 22.9062 8.33959 24.0612 9.05194 24.7736C9.76429 25.4859 10.9192 25.4859 11.6316 24.7736L16.9085 19.4967L22.1854 24.7736C22.8978 25.4859 24.0528 25.4859 24.7652 24.7736C25.4775 24.0612 25.4775 22.9062 24.7652 22.1938L19.4883 16.9169L24.7652 11.64C25.4775 10.9277 25.4775 9.77271 24.7652 9.06035C24.0528 8.348 22.8978 8.348 22.1854 9.06035L16.9085 14.3373L11.6316 9.06035Z"/>
+                  </svg>                  
+                </td>
+              </tr>
+              <tr>
+                <td class="px-4 py-6 font-bold text-xl sm:text-2xl bg-white rounded-bl-lg border-b-8 border-gray-50">Heavy Metal Tested</td>
+                <td class="px-4 py-6 text-center bg-[#00A2F7] text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="currentColor" class="mx-auto">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.9168 21.6795C16.8275 21.6795 21.6187 16.8883 21.6187 10.9776C21.6187 5.0669 16.8275 0.275635 10.9168 0.275635C5.00611 0.275635 0.214844 5.0669 0.214844 10.9776C0.214844 16.8883 5.00611 21.6795 10.9168 21.6795ZM14.701 7.19337C14.902 6.9927 15.1744 6.88008 15.4584 6.88028C15.7424 6.88048 16.0147 6.99349 16.2153 7.19445C16.416 7.3954 16.5286 7.66784 16.5284 7.95183C16.5282 8.23582 16.4152 8.5081 16.2143 8.70877L10.1644 14.7586L10.1602 14.7629C10.061 14.8626 9.94312 14.9417 9.81326 14.9957C9.68341 15.0497 9.54417 15.0775 9.40354 15.0775C9.26291 15.0775 9.12366 15.0497 8.99381 14.9957C8.86396 14.9417 8.74607 14.8626 8.64691 14.7629L8.64263 14.7586L5.61933 11.7353C5.51711 11.6366 5.43558 11.5185 5.3795 11.3879C5.32341 11.2573 5.29389 11.1169 5.29265 10.9748C5.29142 10.8327 5.31849 10.6918 5.3723 10.5603C5.42611 10.4287 5.50558 10.3092 5.60606 10.2088C5.70655 10.1083 5.82604 10.0288 5.95756 9.975C6.08908 9.92119 6.23001 9.89411 6.3721 9.89535C6.5142 9.89658 6.65464 9.92611 6.7852 9.98219C6.91577 10.0383 7.03386 10.1198 7.13258 10.222L9.40354 12.4919L14.701 7.19445V7.19337Z"/>
+                  </svg>
+                </td> 
+                <td class="px-4 py-6 bg-white rounded-br-lg text-center text-[#BFBFBF]">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 33 33" fill="currentColor" class="mx-auto">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.9085 32.9691C25.7739 32.9691 32.9607 25.7823 32.9607 16.9169C32.9607 8.05162 25.7739 0.864868 16.9085 0.864868C8.04321 0.864868 0.856445 8.05162 0.856445 16.9169C0.856445 25.7823 8.04321 32.9691 16.9085 32.9691ZM11.6316 9.06035C10.9192 8.348 9.76429 8.348 9.05194 9.06035C8.33959 9.77271 8.33959 10.9277 9.05194 11.64L14.3289 16.9169L9.05194 22.1938C8.33959 22.9062 8.33959 24.0612 9.05194 24.7736C9.76429 25.4859 10.9192 25.4859 11.6316 24.7736L16.9085 19.4967L22.1854 24.7736C22.8978 25.4859 24.0528 25.4859 24.7652 24.7736C25.4775 24.0612 25.4775 22.9062 24.7652 22.1938L19.4883 16.9169L24.7652 11.64C25.4775 10.9277 25.4775 9.77271 24.7652 9.06035C24.0528 8.348 22.8978 8.348 22.1854 9.06035L16.9085 14.3373L11.6316 9.06035Z"/>
+                  </svg>                  
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td class="px-4 py-2 bg-[#00A2F7] rounded-b-lg"></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="mt-8 text-center">
+            <a href="#shop" class="inline-block bg-[#00A2F7] shadow-outline transition-transform duration-300 hover:-translate-y-1 text-white px-32 py-3 rounded-full shadow hover:bg-white hover:text-[#00A2F7] ">
+              SHOP NOW
+            </a>
+            <div class="flex gap-x-1 mt-2 justify-center">
+              <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="20" viewBox="0 0 17 20" fill="none">
+                  <path d="M16.0992 2.30451C15.9854 2.215 15.8523 2.15143 15.7098 2.11847C15.5674 2.0855 15.4191 2.08399 15.2759 2.11403C14.2286 2.32731 13.1475 2.33003 12.0991 2.12201C11.0507 1.91399 10.0572 1.49965 9.17973 0.904484C9.01567 0.793885 8.82075 0.734619 8.62107 0.734619C8.4214 0.734619 8.22648 0.793885 8.06242 0.904484C7.18499 1.49965 6.19148 1.91399 5.14306 2.12201C4.09464 2.33003 3.0135 2.32731 1.9662 2.11403C1.82304 2.08399 1.67478 2.0855 1.53231 2.11847C1.38984 2.15143 1.25678 2.215 1.14292 2.30451C1.0292 2.39414 0.937606 2.5074 0.874851 2.63595C0.812097 2.76451 0.779781 2.90509 0.780279 3.04737V10.1427C0.779408 11.5082 1.11427 12.8542 1.75698 14.0685C2.39969 15.2828 3.33165 16.3303 4.47525 17.1238L8.05262 19.6C8.21861 19.7148 8.41731 19.7766 8.62107 19.7766C8.82484 19.7766 9.02354 19.7148 9.18953 19.6L12.7669 17.1238C13.9105 16.3303 14.8425 15.2828 15.4852 14.0685C16.1279 12.8542 16.4627 11.5082 16.4619 10.1427V3.04737C16.4624 2.90509 16.43 2.76451 16.3673 2.63595C16.3045 2.5074 16.2129 2.39414 16.0992 2.30451ZM14.5017 10.1427C14.5024 11.2044 14.2422 12.2509 13.7427 13.1952C13.2432 14.1394 12.5189 14.9541 11.63 15.5714L8.62107 17.6571L5.61217 15.5714C4.72325 14.9541 3.99891 14.1394 3.49942 13.1952C2.99992 12.2509 2.73973 11.2044 2.74048 10.1427V4.14263C4.79519 4.31352 6.85301 3.85026 8.62107 2.8188C10.3891 3.85026 12.447 4.31352 14.5017 4.14263V10.1427ZM10.1304 7.96173L7.49396 10.5332L6.62167 9.67604C6.43711 9.49671 6.1868 9.39595 5.9258 9.39595C5.6648 9.39595 5.41449 9.49671 5.22993 9.67604C5.04537 9.85538 4.94169 10.0986 4.94169 10.3522C4.94169 10.6059 5.04537 10.8491 5.22993 11.0284L6.79809 12.5523C6.8892 12.6415 6.9976 12.7124 7.11704 12.7607C7.23647 12.8091 7.36457 12.834 7.49396 12.834C7.62334 12.834 7.75145 12.8091 7.87088 12.7607C7.99032 12.7124 8.09872 12.6415 8.18983 12.5523L11.5614 9.30461C11.7459 9.12527 11.8496 8.88203 11.8496 8.62841C11.8496 8.37478 11.7459 8.13155 11.5614 7.95221C11.3768 7.77287 11.1265 7.67212 10.8655 7.67212C10.6045 7.67212 10.3542 7.77287 10.1696 7.95221L10.1304 7.96173Z" fill="#FF00DE"/>
+                  </svg>
+                </div>
+              <div>30 Day <span class="text-[#FF00DE]">Risk Free</span> Guarantee</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="py-24 bg-[url('assets/faq-bg.webp')] bg-cover bg-center grid place-items-center">
+      <div class="w-full sm:w-1/2 px-4 sm:px-0">
+        <h2 class="text-4xl sm:text-6xl font-bold text-center text-white mb-8">Frequently <br> Asked <br> Questions</h2>
+        <div class="space-y-2">
+          <!-- FAQ Item 1 -->
+          <div class="rounded-2xl bg-white">
+            <button type="button" class="w-full text-left px-4 py-4 cursor-pointer" aria-expanded="false" aria-controls="faq1">
+              <span class="font-medium">What is Earth Elixir Apple Stem Cell Cream?</span>
+              <span class="float-right">+</span>
+            </button>
+            <div id="faq1" class="px-4 py-2 hidden" role="region" aria-labelledby="faq1">
+              <p class="text-gray-600">It is a revolutionary product that harnesses the power of apple stem cells to naturally rejuvenate your skin.</p>
+            </div>
+          </div>
+          <!-- FAQ Item 2 -->
+          <div class="rounded-2xl bg-white">
+            <button type="button" class="w-full text-left px-4 py-4 cursor-pointer" aria-expanded="false" aria-controls="faq2">
+              <span class="font-medium">How do the THC gummies work?</span>
+              <span class="float-right">+</span>
+            </button>
+            <div id="faq2" class="px-4 py-2 hidden" role="region" aria-labelledby="faq2">
+              <p class="text-gray-600">Our THC gummies are carefully crafted to deliver a balanced experience, enhancing mood and promoting relaxation.</p>
+            </div>
+          </div>
+          <!-- FAQ Item 3 -->
+          <div class="rounded-2xl bg-white">
+            <button type="button" class="w-full text-left px-4 py-4 cursor-pointer" aria-expanded="false" aria-controls="faq3">
+              <span class="font-medium">Are there any side effects?</span>
+              <span class="float-right">+</span>
+            </button>
+            <div id="faq3" class="px-4 py-2 hidden" role="region" aria-labelledby="faq3">
+              <p class="text-gray-600">Our products are formulated with natural ingredients to minimize side effects. However, we always recommend reviewing the ingredient list if you have specific concerns.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#854DE9] text-white py-8">
+    <div class="px-4 grid grid-cols-2">
+      <div class="col-span-2 sm:col-span-1">
+        <div class="mb-4 md:mb-8">
+          <div class="mb-3 w-[96px] h-[90px] flex justify-start">
+            <img src="assets/logo.webp" alt="FEEL GOOD">
+          </div>
+          <div class="px-3">
+            <h3 class="font-blackwild text-4xl text-white mb-4">Embrace Wellness Now</h3>
+          <p class="text-white text-xl sm:w-[70%]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus justo ante, malesuada ut porta quis,</p>
+          <form class="mt-4" action="#" method="POST">
+            <div class="flex">
+              <label for="email" class="sr-only">Email address</label>
+              <input type="email" placeholder="Email Address" class=" rounded-lg bg-white  py-3 px-5 me-2 text-gray-500 focus:outline-none focus:ring-2 focus:ring-white" required/>
+              <button type="submit" class="cursor-pointer bg-[#FFFF00] text-[#FF00DE] px-4 py-3 rounded-lg shadow-outline transition-transform duration-300 hover:-translate-y-1">
+                Submit
+              </button>
+            </div>
+          </form>
+          </div>
+        </div>
+        <div class="flex space-x-6 px-3">
+          <a href="#" aria-label="Twitter" class="hover:text-indigo-400 ">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M22.46 6c-.77.35-1.6.58-2.46.69a4.3 4.3 0 001.88-2.37 8.59 8.59 0 01-2.72 1.04A4.28 4.28 0 0015.5 4c-2.37 0-4.29 1.97-4.29 4.4 0 .35.04.7.12 1.03C7.69 9.27 4.07 7.38 1.64 4.49a4.3 4.3 0 00-.58 2.21c0 1.54.78 2.91 1.95 3.71a4.28 4.28 0 01-1.94-.55v.06c0 2.14 1.53 3.94 3.56 4.35a4.36 4.36 0 01-1.94.08c.55 1.7 2.15 2.95 4.05 2.98a8.59 8.59 0 01-5.3 1.84c-.34 0-.68-.02-1.02-.06a12.1 12.1 0 006.56 1.94c7.87 0 12.18-6.51 12.18-12.16 0-.19 0-.38-.01-.57A8.6 8.6 0 0022.46 6z"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="Instagram" class="hover:text-indigo-400 ">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2.16c3.2 0 3.584.012 4.85.07 1.17.056 1.957.242 2.415.404a4.92 4.92 0 011.74 1.11 4.92 4.92 0 011.11 1.74c.163.458.348 1.245.404 2.415.058 1.266.07 1.65.07 4.85s-.012 3.584-.07 4.85c-.056 1.17-.242 1.957-.404 2.415a4.92 4.92 0 01-1.11 1.74 4.92 4.92 0 01-1.74 1.11c-.458.163-1.245.348-2.415.404-1.266.058-1.65.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.056-1.957-.242-2.415-.404a4.92 4.92 0 01-1.74-1.11 4.92 4.92 0 01-1.11-1.74c-.163-.458-.348-1.245-.404-2.415C2.172 15.584 2.16 15.2 2.16 12s.012-3.584.07-4.85c.056-1.17.242-1.957.404-2.415a4.92 4.92 0 011.11-1.74 4.92 4.92 0 011.74-1.11c.458-.163 1.245-.348 2.415-.404C8.416 2.172 8.8 2.16 12 2.16m0-2.16C8.736 0 8.332.014 7.052.072 5.765.131 4.801.308 4.03.633a6.91 6.91 0 00-2.56 1.644A6.91 6.91 0 00.633 4.03c-.325.771-.502 1.735-.561 3.022C.014 8.332 0 8.736 0 12c0 3.264.014 3.668.072 4.948.059 1.287.236 2.251.561 3.022a6.91 6.91 0 001.644 2.56 6.91 6.91 0 002.56 1.644c.771.325 1.735.502 3.022.561C8.332 23.986 8.736 24 12 24c3.264 0 3.668-.014 4.948-.072 1.287-.059 2.251-.236 3.022-.561a6.91 6.91 0 002.56-1.644 6.91 6.91 0 001.644-2.56c.325-.771.502-1.735.561-3.022.058-1.28.072-1.684.072-4.948 0-3.264-.014-3.668-.072-4.948-.059-1.287-.236-2.251-.561-3.022a6.91 6.91 0 00-1.644-2.56A6.91 6.91 0 0019.97.633c-.771-.325-1.735-.502-3.022-.561C15.668.014 15.264 0 12 0z"></path>
+              <path d="M12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a3.999 3.999 0 110-8 3.999 3.999 0 010 8z"></path>
+              <circle cx="18.406" cy="5.594" r="1.44"></circle>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="my-8 text-gray-300 col-span-2 sm:col-span-1 grid grid-cols-2">
+        
+        <div>
+          <h6 class="font-blackwild text-white text-3xl sm:text-[40px]">WEBSITE</h6>
+          <nav class="mt-4" aria-label="Footer Navigation">
+            <ul class="flex-col justify-start space-y-2">
+              <li>
+                <a href="#privacy" class="hover:text-white text-lg sm:text-[22px]">Home</a>
+              </li>
+              <li>
+                <a href="#terms" class="hover:text-white text-lg sm:text-[22px]">About Us</a>
+              </li>
+              <li>
+                <a href="#contact" class="hover:text-white text-lg sm:text-[22px]">Services</a>
+              </li>
+              <li>
+                <a href="#contact" class="hover:text-white text-lg sm:text-[22px]">Contact Us</a>
+              </li>
+              <li>
+                <a href="#privacy" class="hover:text-white text-lg sm:text-[22px]">Privacy Policy</a>
+              </li>
+              <li>
+                <a href="#terms" class="hover:text-white text-lg sm:text-[22px]">Terms of Use</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div>
+          <h6 class="font-blackwild text-white text-3xl sm:text-[40px]">SHOP</h6>
+          <nav class="mt-4" aria-label="Footer Navigation">
+            <ul class="flex-col justify-start space-y-2">
+              <li>
+                <a href="#privacy" class="hover:text-white text-lg sm:text-[22px]">Products</a>
+              </li>
+              <li>
+                <a href="#terms" class="hover:text-white text-lg sm:text-[22px]">THC</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        
+      </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+  </body>
+</html>
