@@ -24,7 +24,7 @@ Setup and Installation:
 
 Clone the repository:
 
-git clone https://github.com/adhilnyy/feel-good-interview.git
+git clone https://github.com/adhilnyy/feel-good.git
 
 Open the project in a browser.
 
